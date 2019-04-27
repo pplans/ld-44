@@ -183,7 +183,12 @@ public class Game : MonoBehaviour
         return m_state;
     }
 
-	void UpdateGame()
+	public void SetState(GameState state)
+	{
+		m_state = state;
+	}
+
+	public virtual void UpdateGame()
 	{
 		switch (m_state)
 		{
@@ -191,7 +196,6 @@ public class Game : MonoBehaviour
 				{
 					if (UnityEngine.Input.anyKey) // special case, start
 					{
-						Debug.Log("oh");
 						m_state = GameState.PLAYING;
 					}
 					break;
@@ -201,7 +205,6 @@ public class Game : MonoBehaviour
 				{
 					if ((Input.Mapper.IsPressed(Input.Action.Action1)&Input.Type.Up)==Input.Type.Up)
 					{
-						Debug.Log("Action1 pressed.");
 					}
 					break;
 				}
@@ -216,7 +219,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	void CaptureKeyboard()
+	public virtual void CaptureKeyboard()
 	{
 		for (int index = 0; index < Input.Mapper.Actions.Length; index++)
 		{
