@@ -9,7 +9,7 @@ namespace Input
 		None = 0x0,
 		Down = 0x1,
 		Up = 0x2,
-        Hold = 0x3
+		Hold = 0x3
 	};
 
 	enum Action
@@ -81,9 +81,9 @@ public class GameImpl : Game
 	public List<Person> m_people;
 	public Player		m_player;
 
-    const float m_playerMovingSpeed = 1f; // per second
+	const float m_playerMovingSpeed = 1f; // per second
 
-    public override void UpdateGame()
+	public override void UpdateGame()
 	{
 		switch (GetState())
 		{
@@ -111,46 +111,46 @@ public class GameImpl : Game
 						Debug.Log("Action 3");
 					}
 
-                    if ((Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold))
-                    {
-                        m_player.gameObject.transform.Translate(-0.71f * m_playerMovingSpeed * Time.deltaTime, 0, -0.71f * m_playerMovingSpeed * Time.deltaTime);
-                        //Debug.Log("Down-Left");
-                    }
-                    else if ((Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold))
-                    {
-                        m_player.gameObject.transform.Translate(0.71f*m_playerMovingSpeed * Time.deltaTime, 0, -0.71f * m_playerMovingSpeed * Time.deltaTime);
-                        //Debug.Log("Down-Right");
-                    }
-                    else if ((Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold))
-                    {
-                        m_player.gameObject.transform.Translate(-0.71f * m_playerMovingSpeed * Time.deltaTime, 0, 0.71f * m_playerMovingSpeed * Time.deltaTime);
-                        //Debug.Log("Up-Left");
-                    }
-                    else if ((Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold))
-                    {
-                        m_player.gameObject.transform.Translate(0.71f * m_playerMovingSpeed * Time.deltaTime, 0, 0.71f * m_playerMovingSpeed * Time.deltaTime);
-                        //Debug.Log("Up-Right");
-                    }
-                    else if (Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold)
-                    {
-                        m_player.gameObject.transform.Translate(0, 0, -m_playerMovingSpeed * Time.deltaTime);
-                        //Debug.Log("Down");
-                    }
-                    else if (Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold)
-                    {
-                        m_player.gameObject.transform.Translate(0, 0, m_playerMovingSpeed * Time.deltaTime);
-                        //Debug.Log("Up");
-                    }
-                    else if (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold)
-                    {
-                        m_player.gameObject.transform.Translate(-m_playerMovingSpeed * Time.deltaTime, 0, 0);
-                        //Debug.Log("Left");
-                    }
-                    else if (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold)
-                    {
-                        m_player.gameObject.transform.Translate(m_playerMovingSpeed * Time.deltaTime, 0, 0);
-                        //Debug.Log("Right");
-                    }
+					if ((Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold))
+					{
+						m_player.gameObject.transform.Translate(-0.71f * m_playerMovingSpeed * Time.deltaTime, 0, -0.71f * m_playerMovingSpeed * Time.deltaTime);
+						//Debug.Log("Down-Left");
+					}
+					else if ((Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold))
+					{
+						m_player.gameObject.transform.Translate(0.71f*m_playerMovingSpeed * Time.deltaTime, 0, -0.71f * m_playerMovingSpeed * Time.deltaTime);
+						//Debug.Log("Down-Right");
+					}
+					else if ((Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold))
+					{
+						m_player.gameObject.transform.Translate(-0.71f * m_playerMovingSpeed * Time.deltaTime, 0, 0.71f * m_playerMovingSpeed * Time.deltaTime);
+						//Debug.Log("Up-Left");
+					}
+					else if ((Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold))
+					{
+						m_player.gameObject.transform.Translate(0.71f * m_playerMovingSpeed * Time.deltaTime, 0, 0.71f * m_playerMovingSpeed * Time.deltaTime);
+						//Debug.Log("Up-Right");
+					}
+					else if (Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold)
+					{
+						m_player.gameObject.transform.Translate(0, 0, -m_playerMovingSpeed * Time.deltaTime);
+						//Debug.Log("Down");
+					}
+					else if (Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold)
+					{
+						m_player.gameObject.transform.Translate(0, 0, m_playerMovingSpeed * Time.deltaTime);
+						//Debug.Log("Up");
+					}
+					else if (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold)
+					{
+						m_player.gameObject.transform.Translate(-m_playerMovingSpeed * Time.deltaTime, 0, 0);
+						//Debug.Log("Left");
+					}
+					else if (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold)
+					{
+						m_player.gameObject.transform.Translate(m_playerMovingSpeed * Time.deltaTime, 0, 0);
+						//Debug.Log("Right");
+					}
 					// update dudes
 					m_player.Update();
 					foreach (Person p in m_targets)
@@ -180,7 +180,7 @@ public class GameImpl : Game
 		{
 			Input.ActionEntry input = Input.Mapper.Actions[index];
 			input.Type = Input.Type.None;
-            if (UnityEngine.Input.GetKeyDown(input.Code))
+			if (UnityEngine.Input.GetKeyDown(input.Code))
 			{
 				input.Type |= Input.Type.Down;
 			}
@@ -188,11 +188,11 @@ public class GameImpl : Game
 			{
 				input.Type |= Input.Type.Up;
 			}
-            if (UnityEngine.Input.GetKey(input.Code))
-            {
-                input.Type |= Input.Type.Hold;
-            }
-            Input.Mapper.Actions[index] = input;
+			if (UnityEngine.Input.GetKey(input.Code))
+			{
+				input.Type |= Input.Type.Hold;
+			}
+			Input.Mapper.Actions[index] = input;
 		}
 	}
 }
