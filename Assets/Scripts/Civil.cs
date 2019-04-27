@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Civil : Person
 {
-    public Civil() : base()
-	{
-	}
+	#region Methods
 
 	public override bool IsInVision(Transform f)
 	{
@@ -14,9 +12,5 @@ public class Civil : Person
 		throw new System.NotImplementedException();
 	}
 
-	// Update is called once per frame
-	public override void Update()
-    {
-        // @TODO
-    }
+	#endregion
 }

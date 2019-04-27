@@ -2,24 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Person : Transform
+public class Person : MonoBehaviour
 {
+	#region Members
+
 	protected bool m_isTarget;
 	protected bool m_isAlive;
 	protected bool m_isShouting;
 
-	private Transform m_model;
+	public Animator stateMachine;
 
-    // Start is called before the first frame update
-    public Person()
-    {
+	#endregion
+
+	#region UnityEvents
+
+	public void Awake()
+	{
 		m_isAlive = true;
 		m_isTarget = false;
 		m_isShouting = false;
-    }
+	}
 
-	public abstract bool IsInVision(Transform f);
+	public void Update()
+	{
+	}
 
-    // Update is called once per frame
-    public abstract void Update();
+	#endregion
+
+	#region Methods
+
+	public virtual bool IsInVision(Transform f)
+	{
+		//throw new System.NotImplementedException();
+		return false;
+	}
+
+	#endregion
 }

@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Guard : Person
 {
-	public Guard() : base()
+	#region UnityEvents
+
+	public void Start()
 	{
+		stateMachine.SetTrigger("Walk");
 	}
+
+	#endregion
+
+	#region Methods
 
 	public override bool IsInVision(Transform f)
 	{
@@ -14,9 +21,5 @@ public class Guard : Person
 		throw new System.NotImplementedException();
 	}
 
-	// Update is called once per frame
-	public override void Update()
-	{
-		// @TODO
-	}
+	#endregion
 }
