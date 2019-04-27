@@ -21,8 +21,8 @@ public class LightBlinking : MonoBehaviour
         if(m_bIsBlinking)
 		{
 			m_fBlinkingCycle -= Time.fixedDeltaTime;
-			m_light.enabled = !(m_fBlinkingCycle < 0.0f);
-			if (m_fBlinkingCycle< 0.0f)
+			m_light.enabled = !(m_fBlinkingCycle < -m_fBlinkingOffset);
+			if (m_fBlinkingCycle< -m_fBlinkingOffset)
 			{
 				m_fBlinkingCycle = Random.Range(0.2f, 1.0f);
 			}
