@@ -5,14 +5,12 @@ using UnityEngine.AI;
 
 public class WalkState : StateMachineBehaviour
 {
-	private NavMeshAgent navMeshAgent;
+	private PersonAI personAI;
 
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		navMeshAgent = animator.gameObject.GetComponent<NavMeshAgent>();
-		if (navMeshAgent == null)
-			throw new System.NotImplementedException();
+		personAI = animator.gameObject.GetComponent<PersonAI>();
 
-		navMeshAgent.destination = new Vector3(-5, 0, 0);
+		personAI.navMeshAgent.destination = new Vector3(-5, 0, 0);
 	}
 }
