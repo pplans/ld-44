@@ -11,11 +11,11 @@ public class WalkState : StateMachineBehaviour
 		personAI = animator.gameObject.GetComponent<PersonAI>();
 		
 		personAI.navMeshAgent.speed = 1f;
-		personAI.navMeshAgent.SetDestination(personAI.target);
 	}
 
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
+		personAI.navMeshAgent.SetDestination(personAI.target);
 		//personAI.CheckSight();
 	}
 }

@@ -28,29 +28,34 @@ public class PersonAI : MonoBehaviour
 		CheckSight();
 	}
 
+	public void OnDrawGizmos()
+	{
+		Debug.DrawLine(transform.position + Vector3.up, target);
+	}
+
 	#endregion
 
 	#region Methods
 
 	public void CheckSight()
 	{
-		Vector3 ray = transform.forward * 5f - transform.position;
-		if (!Physics.Raycast(transform.position, ray, ray.magnitude, ~LayerMask.GetMask("Default"))) // Check no obstacle between person and target
+		Vector3 ray = transform.forward * 10f;
+		if (!Physics.Raycast(transform.position, ray, ray.magnitude, LayerMask.GetMask("Default"))) // Check no obstacle between person and target
 		{
 			RaycastHit hit;
 			if (Physics.Raycast(transform.position, ray, out hit, ray.magnitude) && hit.transform.tag == "Player") // Check if player is seen
-				SeeSomething(target);
+				SeeSomething(hit.transform.position);
 		}
 	}
 
-	public void SeeSomething(Vector3 pos)
+	public void SeeSomething(Vector3 pos, bool scary = false)
 	{
 		// react to something being seen at the position pos
 		//Debug.Log(transform.name +  " sees something.");
 
+		Scream();
 		target = pos;
 		target.y = 1f;
-		Scream();
 		stateMachine.SetTrigger("Seen");
 	}
 
@@ -66,7 +71,7 @@ public class PersonAI : MonoBehaviour
 	public void Scream()
 	{
 		Debug.Log(transform.name +  " : AAHH!");
-		Collider[] colliders = Physics.OverlapSphere(transform.position, 5f, ~LayerMask.GetMask("Default"));
+		Collider[] colliders = Physics.OverlapSphere(transform.position, 8f, ~LayerMask.GetMask("Default"));
 		foreach (Collider c in colliders)
 		{
 			if (c.transform == transform) // Don't scare yourself
