@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEditor;
+using UnityEngine.SceneManagement;
 
 using System.Collections.Generic;       //Allows us to use Lists. 
 using UnityEngine.UI;                   //Allows us to use UI.
@@ -8,6 +9,8 @@ using UnityEngine.UI;                   //Allows us to use UI.
 public abstract class Game : MonoBehaviour
 {
 	public static Game instance = null;
+	public SceneAsset[] levels;
+
 	public enum GameState
 	{
 		START,
@@ -46,8 +49,13 @@ public abstract class Game : MonoBehaviour
 		m_UIGame.SetActive(false);
 		m_UIMain.SetActive(true);
 	}
-
+	
 	public void StartGame()
+	{
+		StartGame(PlayerPrefs.GetInt("Level", 0));
+	}
+
+	public void StartGame(int level = 0)
 	{
 		if(m_state == GameState.MENU)
 		{
@@ -62,6 +70,7 @@ public abstract class Game : MonoBehaviour
 			// start the game here
 			Debug.Log("StartGame");
 			m_state = GameState.PLAYING;
+			SceneManager.LoadScene(levels[level].name, UnityEngine.SceneManagement.LoadSceneMode.Additive);
 		}
 	}
 
@@ -96,6 +105,7 @@ public abstract class Game : MonoBehaviour
 			m_UIGame.SetActive(false);
 			m_UIMain.SetActive(false);
 			m_UIGameOver.SetActive(true);
+			SceneManager.LoadScene("LoadLevel", UnityEngine.SceneManagement.LoadSceneMode.Single);
 		}
 	}
 

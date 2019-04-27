@@ -91,6 +91,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: da451b7f9cbd35643bc70dd1f476aa95, type: 2}
+      objectReference: {fileID: 2100000, guid: 91aaf9592be558f4182eae2f49f30daa, type: 2}
+    - target: {fileID: 6811502480810183674, guid: 199ccb90efb5463499dc421c1c18fd64,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811502480810183674, guid: 199ccb90efb5463499dc421c1c18fd64,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 199ccb90efb5463499dc421c1c18fd64, type: 3}
