@@ -10,7 +10,7 @@ public class Test : MonoBehaviour
 	{
 		foreach (PersonAI p in persons)
 		{
-			p.SeeSomething(transform.position);
+			//p.SeeSomething(transform.position);
 		}
 	}
 

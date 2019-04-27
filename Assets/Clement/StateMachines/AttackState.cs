@@ -16,7 +16,5 @@ public class AttackState :  StateMachineBehaviour
 	
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		Debug.Log(animator.transform.name + " Bang!");
-		personAI.CheckSight();
 	}
 }
