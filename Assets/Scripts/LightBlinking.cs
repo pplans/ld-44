@@ -10,7 +10,7 @@ public class LightBlinking : MonoBehaviour
 	public float m_fBlinkingCycle = 1.0f;
 	public float m_fBlinkingCycleMin = 0.2f;
 	public float m_fBlinkingCycleMax = 1.0f;
-	public Light m_light;
+	private Light m_light;
 
 	private void Start()
 	{

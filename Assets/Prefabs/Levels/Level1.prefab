@@ -928,6 +928,8 @@ MonoBehaviour:
   m_bIsBlinking: 1
   m_fBlinkingOffset: 0.1
   m_fBlinkingCycle: 1
+  m_fBlinkingCycleMin: 0.2
+  m_fBlinkingCycleMax: 2
   m_light: {fileID: 0}
 --- !u!1 &288564286224922265
 GameObject:
