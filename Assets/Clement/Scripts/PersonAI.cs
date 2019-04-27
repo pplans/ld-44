@@ -24,6 +24,17 @@ public class PersonAI : MonoBehaviour
 		animations.SetFloat("Forward", forwardVelocity);
 		//animations.SetFloat("Turn", angularVelocity);
 
+		//Return to Idle
+		Vector3 ray = target - transform.position;
+		if (!Physics.Raycast(transform.position, ray, ray.magnitude, ~LayerMask.GetMask("Player"))) // Check nothing between person and target
+		{
+			if (Physics.Raycast(transform.position, ray, ray.magnitude, LayerMask.GetMask("Player"))) // Check if player is seen
+				;
+				//Line of sight
+			else
+				stateMachine.SetTrigger("Idle");
+		}
+
 		//Vision
 
 	}
@@ -36,6 +47,7 @@ public class PersonAI : MonoBehaviour
 	{
 		target = pos;
 		Scream();
+		stateMachine.SetTrigger("Seen");
 		// react to something being seen at the position pos
 	}
 
