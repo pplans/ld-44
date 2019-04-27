@@ -13,4 +13,10 @@ public class AttackState :  StateMachineBehaviour
 		personAI.navMeshAgent.speed = 3f;
 		personAI.navMeshAgent.SetDestination(personAI.target);
 	}
+	
+	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	{
+		Debug.Log(animator.transform.name + " Bang!");
+		personAI.CheckSight();
+	}
 }

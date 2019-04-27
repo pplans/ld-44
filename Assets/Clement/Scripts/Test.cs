@@ -13,4 +13,8 @@ public class Test : MonoBehaviour
 			p.SeeSomething(transform.position);
 		}
 	}
+
+	void Update()
+	{
+	}
 }
