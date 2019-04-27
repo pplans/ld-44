@@ -10,8 +10,13 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 9a31c779a92805d498ab62209344c943,
         type: 3}
       propertyPath: m_Name
-      value: bath
+      value: EmptyBath
       objectReference: {fileID: 0}
+    - target: {fileID: -9085620575507217848, guid: 9a31c779a92805d498ab62209344c943,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 621a4561221a4b441983184298d84039, type: 2}
     - target: {fileID: -4216859302048453862, guid: 9a31c779a92805d498ab62209344c943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,6 +72,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1663829410968058661, guid: 9a31c779a92805d498ab62209344c943,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 621a4561221a4b441983184298d84039, type: 2}
+    - target: {fileID: 8275711698423452344, guid: 9a31c779a92805d498ab62209344c943,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 621a4561221a4b441983184298d84039, type: 2}
     - target: {fileID: 302631375639072232, guid: 9a31c779a92805d498ab62209344c943,
         type: 3}
       propertyPath: m_IsActive
