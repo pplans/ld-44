@@ -1482,11 +1482,11 @@ Transform:
   - {fileID: 422543647}
   - {fileID: 1225882161}
   - {fileID: 1400291402}
-  - {fileID: 152433990}
   - {fileID: 495802875}
+  - {fileID: 152433990}
   - {fileID: 520030161}
-  - {fileID: 1765825281}
   - {fileID: 1571619298}
+  - {fileID: 1765825281}
   m_Father: {fileID: 1162011802}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1612,7 +1612,7 @@ Transform:
   m_LocalScale: {x: 0.29999998, y: 2.3232, z: 2}
   m_Children: []
   m_Father: {fileID: 437406580}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!65 &495802876
 BoxCollider:
@@ -2384,11 +2384,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: -2
   far clip plane: 1000
   field of view: 90
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2401,7 +2401,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &664433269
@@ -5306,7 +5306,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 2.3232, z: 8.6}
   m_Children: []
   m_Father: {fileID: 437406580}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!65 &1571619299
 BoxCollider:
