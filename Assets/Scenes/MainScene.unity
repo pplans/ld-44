@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 648670607}
   - component: {fileID: 648670606}
   m_Layer: 5
-  m_Name: DebugButtonGameOver
+  m_Name: DebugButtonGotoMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 142420806}
-        m_MethodName: EndGame
+        m_MethodName: InitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1184,7 +1184,7 @@ GameObject:
   - component: {fileID: 1141706516}
   - component: {fileID: 1141706515}
   m_Layer: 5
-  m_Name: DebugButtonMainMenu
+  m_Name: DebugButtonGameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1254,7 +1254,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 142420806}
-        m_MethodName: InitGame
+        m_MethodName: EndGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
