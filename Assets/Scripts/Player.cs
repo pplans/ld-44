@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
 		m_blood = 100.0f;
 	}
 
+    void LossBloddOverTime() {
+        m_blood -= m_bloodPerSecond*Time.deltaTime;
+    }
+
     // Update is called once per frame
     public void Update()
     {
