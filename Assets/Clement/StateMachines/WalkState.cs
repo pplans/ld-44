@@ -13,4 +13,9 @@ public class WalkState : StateMachineBehaviour
 		personAI.navMeshAgent.speed = 1f;
 		personAI.navMeshAgent.SetDestination(personAI.target);
 	}
+
+	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	{
+		personAI.CheckSight();
+	}
 }
