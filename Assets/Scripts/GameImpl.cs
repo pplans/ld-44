@@ -8,13 +8,19 @@ namespace Input
 	{
 		None = 0x0,
 		Down = 0x1,
-		Up = 0x2
+		Up = 0x2,
+        Hold = 0x3
 	};
 
 	enum Action
 	{
 		Action1 = 0,
-		Action2 = 1
+		Action2 = 1,
+		Action3 = 2,
+		Up = 3,
+		Down = 4,
+		Left = 5,
+		Right = 6
 	}
 
 	struct ActionEntry
@@ -54,7 +60,12 @@ namespace Input
 		public static ActionEntry[] Actions =
 		{
 			new ActionEntry(Action.Action1, KeyCode.X, "Action", Type.None),
-			new ActionEntry(Action.Action2, KeyCode.C, "Action2", Type.None)
+			new ActionEntry(Action.Action2, KeyCode.C, "Action2", Type.None),
+			new ActionEntry(Action.Action3, KeyCode.V, "Action3", Type.None),
+			new ActionEntry(Action.Up, KeyCode.UpArrow, "Up", Type.None),
+			new ActionEntry(Action.Down, KeyCode.DownArrow, "Down", Type.None),
+			new ActionEntry(Action.Left, KeyCode.LeftArrow, "Left", Type.None),
+			new ActionEntry(Action.Right, KeyCode.RightArrow, "Right", Type.None)
 		};
 
 		public static Type IsPressed(Action a)
@@ -70,7 +81,9 @@ public class GameImpl : Game
 	public List<Person> m_people;
 	public Player		m_player;
 
-	public override void UpdateGame()
+    const float m_playerMovingSpeed = 1f; // per second
+
+    public override void UpdateGame()
 	{
 		switch (GetState())
 		{
@@ -85,9 +98,59 @@ public class GameImpl : Game
 			case GameState.PLAYINGNOTIMER:
 			case GameState.PLAYING:
 				{
-					if ((Input.Mapper.IsPressed(Input.Action.Action1) & Input.Type.Up) == Input.Type.Up)
+					if (Input.Mapper.IsPressed(Input.Action.Action1) == Input.Type.Up)
 					{
+					Debug.Log("Action 1");
 					}
+					if (Input.Mapper.IsPressed(Input.Action.Action2) == Input.Type.Up)
+					{
+						Debug.Log("Action 2");
+					}
+					if (Input.Mapper.IsPressed(Input.Action.Action3) == Input.Type.Up)
+					{
+						Debug.Log("Action 3");
+					}
+
+                    if ((Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold))
+                    {
+                        m_player.gameObject.transform.Translate(-0.71f * m_playerMovingSpeed * Time.deltaTime, 0, -0.71f * m_playerMovingSpeed * Time.deltaTime);
+                        //Debug.Log("Down-Left");
+                    }
+                    else if ((Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold))
+                    {
+                        m_player.gameObject.transform.Translate(0.71f*m_playerMovingSpeed * Time.deltaTime, 0, -0.71f * m_playerMovingSpeed * Time.deltaTime);
+                        //Debug.Log("Down-Right");
+                    }
+                    else if ((Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold))
+                    {
+                        m_player.gameObject.transform.Translate(-0.71f * m_playerMovingSpeed * Time.deltaTime, 0, 0.71f * m_playerMovingSpeed * Time.deltaTime);
+                        //Debug.Log("Up-Left");
+                    }
+                    else if ((Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold))
+                    {
+                        m_player.gameObject.transform.Translate(0.71f * m_playerMovingSpeed * Time.deltaTime, 0, 0.71f * m_playerMovingSpeed * Time.deltaTime);
+                        //Debug.Log("Up-Right");
+                    }
+                    else if (Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold)
+                    {
+                        m_player.gameObject.transform.Translate(0, 0, -m_playerMovingSpeed * Time.deltaTime);
+                        //Debug.Log("Down");
+                    }
+                    else if (Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold)
+                    {
+                        m_player.gameObject.transform.Translate(0, 0, m_playerMovingSpeed * Time.deltaTime);
+                        //Debug.Log("Up");
+                    }
+                    else if (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold)
+                    {
+                        m_player.gameObject.transform.Translate(-m_playerMovingSpeed * Time.deltaTime, 0, 0);
+                        //Debug.Log("Left");
+                    }
+                    else if (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold)
+                    {
+                        m_player.gameObject.transform.Translate(m_playerMovingSpeed * Time.deltaTime, 0, 0);
+                        //Debug.Log("Right");
+                    }
 					// update dudes
 					m_player.Update();
 					foreach (Person p in m_targets)
@@ -117,7 +180,7 @@ public class GameImpl : Game
 		{
 			Input.ActionEntry input = Input.Mapper.Actions[index];
 			input.Type = Input.Type.None;
-			if (UnityEngine.Input.GetKeyDown(input.Code))
+            if (UnityEngine.Input.GetKeyDown(input.Code))
 			{
 				input.Type |= Input.Type.Down;
 			}
@@ -125,7 +188,11 @@ public class GameImpl : Game
 			{
 				input.Type |= Input.Type.Up;
 			}
-			Input.Mapper.Actions[index] = input;
+            if (UnityEngine.Input.GetKey(input.Code))
+            {
+                input.Type |= Input.Type.Hold;
+            }
+            Input.Mapper.Actions[index] = input;
 		}
 	}
 }
