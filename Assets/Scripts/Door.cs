@@ -18,12 +18,6 @@ public class Door : MonoBehaviour
 		{
 			m_animator.enabled = true;
 			m_animator.Play("OpenSingleDoor");
-			Debug.Log("Play OpenSingleDoor");
 		}
-	}
-
-	private void OnTriggerExit(Collider other)
-	{
-		m_animator.enabled = false;
 	}
 }
