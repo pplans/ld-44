@@ -8,6 +8,8 @@ public class LightBlinking : MonoBehaviour
 	public bool m_bIsBlinking = true;
 	public float m_fBlinkingOffset = 0.1f;
 	public float m_fBlinkingCycle = 1.0f;
+	public float m_fBlinkingCycleMin = 0.2f;
+	public float m_fBlinkingCycleMax = 1.0f;
 	public Light m_light;
 
 	private void Start()
@@ -24,7 +26,7 @@ public class LightBlinking : MonoBehaviour
 			m_light.enabled = !(m_fBlinkingCycle < -m_fBlinkingOffset);
 			if (m_fBlinkingCycle< -m_fBlinkingOffset)
 			{
-				m_fBlinkingCycle = Random.Range(0.2f, 1.0f);
+				m_fBlinkingCycle = Random.Range(m_fBlinkingCycleMin, m_fBlinkingCycleMax);
 			}
 		}
     }
