@@ -50,6 +50,7 @@ public abstract class Game : MonoBehaviour
 		m_UIMain.SetActive(true);
 	}
 	
+	
 	public void StartGame()
 	{
 		StartGame(PlayerPrefs.GetInt("Level", 0));
@@ -70,7 +71,8 @@ public abstract class Game : MonoBehaviour
 			// start the game here
 			Debug.Log("StartGame");
 			m_state = GameState.PLAYING;
-			SceneManager.LoadScene(levels[level].name, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+			if (level < levels.Length)
+				SceneManager.LoadScene(levels[level].name, LoadSceneMode.Additive);
 		}
 	}
 
@@ -105,7 +107,7 @@ public abstract class Game : MonoBehaviour
 			m_UIGame.SetActive(false);
 			m_UIMain.SetActive(false);
 			m_UIGameOver.SetActive(true);
-			SceneManager.LoadScene("LoadLevel", UnityEngine.SceneManagement.LoadSceneMode.Single);
+			SceneManager.LoadScene("LoadLevel", LoadSceneMode.Single);
 		}
 	}
 

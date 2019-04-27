@@ -6,6 +6,10 @@ using UnityEngine.AI;
 public class PersonAI : MonoBehaviour
 {
 	#region Members
+
+	const float visionDepth = 10f;
+	const float visionConeAngle = 40;
+	const int visionRaysCount = 10;
 	
 	public Animator animations;
 	public NavMeshAgent navMeshAgent;
@@ -30,7 +34,14 @@ public class PersonAI : MonoBehaviour
 
 	public void OnDrawGizmos()
 	{
-		Debug.DrawLine(transform.position + Vector3.up, target);
+		//Debug.DrawLine(transform.position + Vector3.up, target);
+
+		//float angleStart = -visionConeAngle / 2;
+		//float angleStep = visionConeAngle / visionRaysCount;
+		//for (int r = 0 ; r < visionRaysCount ; ++r)
+		//{
+		//	Debug.DrawLine(transform.position + Vector3.up, transform.position + Vector3.up + Quaternion.AngleAxis(angleStart + r * angleStep, Vector3.up) * transform.forward * visionDepth);
+		//}
 	}
 
 	#endregion
@@ -39,13 +50,23 @@ public class PersonAI : MonoBehaviour
 
 	public void CheckSight()
 	{
-		Vector3 ray = transform.forward * 10f;
-		if (!Physics.Raycast(transform.position, ray, ray.magnitude, LayerMask.GetMask("Default"))) // Check no obstacle between person and target
+		
+		float angleStart = -visionConeAngle / 2;
+		float angleStep = visionConeAngle / visionRaysCount;
+		for (int r = 0 ; r <= visionRaysCount ; ++r)
 		{
+			Ray ray = new Ray(transform.position + Vector3.up, Quaternion.AngleAxis(angleStart + r * angleStep, Vector3.up) * transform.forward);
 			RaycastHit hit;
-			if (Physics.Raycast(transform.position, ray, out hit, ray.magnitude) && hit.transform.tag == "Player") // Check if player is seen
+			if (Physics.Raycast(ray, out hit, visionDepth) && hit.transform.tag == "Player")
+			{
+			//	Debug.DrawLine(ray.origin, hit.point, Color.red, 1f, true);
 				SeeSomething(hit.transform.position);
+				return;
+			}
+			//else
+			//	Debug.DrawRay(ray.origin, ray.direction * visionDepth, Color.red);
 		}
+
 	}
 
 	public void SeeSomething(Vector3 pos, bool scary = false)
