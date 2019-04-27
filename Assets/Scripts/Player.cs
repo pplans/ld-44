@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player
+public class Player : MonoBehaviour
 {
 	float m_blood;
 	const float m_bloodPerSecond = 0.2f; // is static

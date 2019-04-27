@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Person
+public abstract class Person : Transform
 {
 	protected bool m_isTarget;
 	protected bool m_isAlive;

@@ -66,7 +66,6 @@ namespace Input
 
 public class GameImpl : Game
 {
-
 	public List<Person> m_targets;
 	public List<Person> m_people;
 	public Player		m_player;
