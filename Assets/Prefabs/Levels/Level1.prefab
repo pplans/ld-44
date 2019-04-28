@@ -1534,11 +1534,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564284737998968}
     m_Modifications:
-    - target: {fileID: 8733526381482968008, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
-        type: 3}
-      propertyPath: m_Name
-      value: Toilet
-      objectReference: {fileID: 0}
     - target: {fileID: 5722085148508123611, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1593,6 +1588,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733526381482968008, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
+        type: 3}
+      propertyPath: m_Name
+      value: Toilet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e70be5bbdeb04241b8c4012e46a9baf, type: 3}
@@ -4773,6 +4773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 99.99982
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887009360112992623, guid: d15540cdaa7064d4abb8574d0020165e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d15540cdaa7064d4abb8574d0020165e, type: 3}
@@ -8994,11 +8999,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564284737998968}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9064,6 +9064,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 99.99998
       objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_Enabled
@@ -9084,11 +9089,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564286224922264}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9158,6 +9158,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 100.00042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
@@ -9254,11 +9259,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564286224922264}
     m_Modifications:
-    - target: {fileID: 8733526381482968008, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
-        type: 3}
-      propertyPath: m_Name
-      value: Toilet
-      objectReference: {fileID: 0}
     - target: {fileID: 5722085148508123611, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9313,6 +9313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733526381482968008, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
+        type: 3}
+      propertyPath: m_Name
+      value: Toilet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e70be5bbdeb04241b8c4012e46a9baf, type: 3}
@@ -9479,11 +9484,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564285619608178}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9553,6 +9553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 100.00042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1
       objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
@@ -9724,11 +9729,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564284144940402}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9798,6 +9798,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 100.00042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1
       objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
@@ -9894,11 +9899,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564285861471549}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9968,6 +9968,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 100.00042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
@@ -10214,11 +10219,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564286224922264}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10288,6 +10288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 100.00042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1
       objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
@@ -10399,11 +10404,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564284737998968}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10469,6 +10469,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 99.99998
       objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_Enabled
@@ -10489,11 +10494,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564285619608178}
     m_Modifications:
-    - target: {fileID: 8733526381482968008, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
-        type: 3}
-      propertyPath: m_Name
-      value: Toilet
-      objectReference: {fileID: 0}
     - target: {fileID: 5722085148508123611, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10548,6 +10548,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733526381482968008, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
+        type: 3}
+      propertyPath: m_Name
+      value: Toilet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e70be5bbdeb04241b8c4012e46a9baf, type: 3}
@@ -10714,11 +10719,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564285619608178}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10789,6 +10789,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 100.00018
       objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1
+      objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_Enabled
@@ -10809,11 +10814,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564284144940402}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10883,6 +10883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 100.00042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
@@ -10979,11 +10984,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564285861471549}
     m_Modifications:
-    - target: {fileID: 8733526381482968008, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
-        type: 3}
-      propertyPath: m_Name
-      value: Toilet (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 5722085148508123611, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11039,6 +11039,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8733526381482968008, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
+        type: 3}
+      propertyPath: m_Name
+      value: Toilet (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e70be5bbdeb04241b8c4012e46a9baf, type: 3}
 --- !u!4 &171455728558514096 stripped
@@ -11054,11 +11059,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564285619608178}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11129,6 +11129,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 100.00042
       objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_Enabled
@@ -11149,11 +11154,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564285861471549}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11223,6 +11223,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 100.00042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
@@ -11394,11 +11399,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564284144940402}
     m_Modifications:
-    - target: {fileID: 8733526381482968008, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
-        type: 3}
-      propertyPath: m_Name
-      value: Toilet
-      objectReference: {fileID: 0}
     - target: {fileID: 5722085148508123611, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11454,6 +11454,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8733526381482968008, guid: 7e70be5bbdeb04241b8c4012e46a9baf,
+        type: 3}
+      propertyPath: m_Name
+      value: Toilet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e70be5bbdeb04241b8c4012e46a9baf, type: 3}
 --- !u!4 &1437819954524674819 stripped
@@ -11469,11 +11474,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564285043563271}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11543,6 +11543,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 100.00042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
@@ -11789,11 +11794,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564284737998968}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11858,6 +11858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 99.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
@@ -12029,11 +12034,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 288564285043563271}
     m_Modifications:
-    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall1Lamp1 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8308194375071001530, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12103,6 +12103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 100.00042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940902146659676498, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall1Lamp1 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4298027446725984846, guid: 0f91f7ea3aea67240a9c5bb6587b663d,
         type: 3}
