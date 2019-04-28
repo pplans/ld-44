@@ -139,7 +139,7 @@ public class GameImpl : Game
         if (levelComplete)
         {
             Debug.Log("Level Complete");
-            loadLevel.LoadLevelX(0);
+            loadLevel.LoadLevelX(1);
         }
 
 		foreach (Person p in m_targets)
