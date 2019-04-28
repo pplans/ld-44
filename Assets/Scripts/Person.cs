@@ -13,7 +13,7 @@ public class Person : MonoBehaviour
 
     public float m_blood;
 
-	public Animator stateMachine;
+	public PersonAI personAI;
 
 	#endregion
 
@@ -48,6 +48,7 @@ public class Person : MonoBehaviour
     {
         Debug.Log("Person is dead");
         m_isAlive = false;
+		personAI.stateMachine.SetTrigger("Die");
     }
 
 	public virtual bool IsInVision(Transform f)

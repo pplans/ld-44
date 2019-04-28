@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_blood: 50
-  stateMachine: {fileID: 0}
+  personAI: {fileID: 4476252162626446478}
 --- !u!114 &4476252162626446478
 MonoBehaviour:
   m_ObjectHideFlags: 0

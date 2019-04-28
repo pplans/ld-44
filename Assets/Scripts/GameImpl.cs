@@ -81,8 +81,9 @@ public class GameImpl : Game
 
 	public List<Person> m_targets;
 	public List<Person> m_people;
+    bool levelComplete = false;
 
-	public Player m_player;
+    public Player m_player;
 	public PlayerController m_playerController;
 
 	const float m_playerMovingSpeed = 5f; // per second
@@ -121,6 +122,21 @@ public class GameImpl : Game
 		{
 			loadLevel.LoadLevelX(0);
 		}
+
+        levelComplete = true;
+        foreach (var p in m_targets)
+        {
+            if (p.GetIsAlive())
+            {
+                levelComplete = false; 
+            }
+        }
+
+        if (levelComplete)
+        {
+            Debug.Log("Level Complete");
+            loadLevel.LoadLevelX(0);
+        }
 
 		foreach (Person p in m_targets)
 		{

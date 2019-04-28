@@ -8,7 +8,6 @@ public class Guard : Person
 
 	public void Start()
 	{
-		stateMachine.SetTrigger("Walk");
 	}
 
 	#endregion

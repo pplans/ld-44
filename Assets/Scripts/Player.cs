@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
             m_blood -= m_bloodPerSecond * Time.deltaTime;
         }
         
-        Debug.Log("Blood : " +m_blood);
+        //Debug.Log("Blood : " +m_blood);
 
         if (m_blood <= 0)
         {
