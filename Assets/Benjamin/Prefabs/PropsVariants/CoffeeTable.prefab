@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!65 &6761919366507056465
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777899831640374952}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4553155, y: 0.63902783, z: 0.8283198}
+  m_Center: {x: 0.014440954, y: 0.32443416, z: -0.009247541}
+--- !u!1001 &5137524117689460641
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -927199367670048503, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_Name
+      value: CoffeeTable
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.4725633
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0020834152
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.4435346
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936627778743026507, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -4263114277904663622, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723519463381453177, guid: ff210408e06a7b74987ba8f6e0e55be9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e1808a279babda40ac0cec6929bbf5d, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ff210408e06a7b74987ba8f6e0e55be9, type: 3}
+--- !u!1 &3777899831640374952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: ff210408e06a7b74987ba8f6e0e55be9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5137524117689460641}
+  m_PrefabAsset: {fileID: 0}
