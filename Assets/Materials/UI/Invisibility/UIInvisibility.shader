@@ -5,6 +5,7 @@
 		_MainTex("Ankh", 2D) = "white" {}
 		_NoiseTex("Noise", 2D) = "white" {}
 		_FlowMapTex("FlowMap", 2D) = "white" {}
+		_FlowAnim("Anim", Float) = 1.0
 		_FlowCycle("Cycle", Float) = 4.0
 		_FlowCycleSpeed("Cycle Speed", Float) = 1.0
 		_FlowSpeed("Speed", Float) = 1.5
@@ -50,6 +51,7 @@
 				float _FlowCycle;
 				float _FlowCycleSpeed;
 				float _FlowSpeed;
+				float _FlowAnim;
 				float4 _FlowScale;
 
 				// from https://www.shadertoy.com/view/tdfSW4
@@ -112,7 +114,8 @@
 				{
 					// sample the texture
 					fixed4 col = applyFlowMap(_NoiseTex, _FlowMapTex, i.uv);
-					col.rgb = 0.0f;
+					col.a = lerp(0.0, col.a, _FlowAnim);
+					col.rgb = col.aaa*0.2f;
 					col.rgb *= col.a;
 					return clamp(col, 0.0, 1.0);
 				}

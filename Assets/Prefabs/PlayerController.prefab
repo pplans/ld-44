@@ -49,6 +49,7 @@ MonoBehaviour:
   m_timeToEatOnePeople: 1
   m_distanceToEatPeople: 2
   m_uiBloodPoolMat: {fileID: 2100000, guid: b8d60cf65143b8a42bf774cae22520c3, type: 2}
+  m_uiObfuscationMat: {fileID: 2100000, guid: cfffaa9c5b6f4844c839fb5aca459ac1, type: 2}
   m_ObfuscationMat: {fileID: 2100000, guid: 556010ccb40b07d4d924bb690970d202, type: 2}
   m_model: {fileID: 6880409707114678004}
 --- !u!1001 &3695275365367495526
