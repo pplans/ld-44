@@ -94,9 +94,6 @@ public class PersonAI : MonoBehaviour
 
 	public void Scream()
 	{
-		animations.SetTrigger("StartShouting");
-		animations.SetTrigger("StopShouting");
-
 		Collider[] colliders = Physics.OverlapSphere(transform.position, 8f, LayerMask.GetMask("Person"));
 		foreach (Collider c in colliders)
 		{

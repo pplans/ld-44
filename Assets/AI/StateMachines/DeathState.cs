@@ -9,6 +9,7 @@ public class DeathState : StateMachineBehaviour
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		personAI = animator.gameObject.GetComponent<PersonAI>();
+		personAI.navMeshAgent.speed = 0f;
 
 		personAI.animations.SetTrigger("Die");
 		personAI.enabled = false;

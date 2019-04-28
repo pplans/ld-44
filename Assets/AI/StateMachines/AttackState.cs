@@ -15,6 +15,7 @@ public class AttackState :  StateMachineBehaviour
 		playerTransform = (GameImpl.instance as GameImpl).m_player.transform;
 		personAI.target = playerTransform.position;
 
+		personAI.animations.ResetTrigger("StopAiming");
 		personAI.animations.SetTrigger("StartAiming");
 		shootDelay = shootInterval;
 	}
@@ -23,15 +24,6 @@ public class AttackState :  StateMachineBehaviour
 	{
 		personAI.target = playerTransform.position;
 		Vector3 lookAtPlayer = playerTransform.position - personAI.transform.position;
-		RaycastHit hit;
-		if (Physics.Raycast(animator.transform.position + Vector3.up, lookAtPlayer, out hit, PersonAI.visionDepth, LayerMask.GetMask("Ignore Raycast"))
-			&& (hit.collider.tag != "Player"))
-		{
-			//Line of sight is broken, switch to walk state with last seen position as target
-			personAI.stateMachine.SetTrigger("Idle");
-			personAI.HearSomething(playerTransform.position);
-			return;
-		}
 
 		personAI.transform.rotation = Quaternion.LookRotation(lookAtPlayer, Vector3.up);
 
@@ -41,10 +33,21 @@ public class AttackState :  StateMachineBehaviour
 			Debug.Log(animator.transform.name + " Bang!");
 			shootDelay = shootInterval;
 		}
+
+		RaycastHit hit;
+		if (Physics.Raycast(animator.transform.position + Vector3.up, lookAtPlayer, out hit, PersonAI.visionDepth, LayerMask.GetMask("Ignore Raycast"))
+			&& (hit.collider.tag != "Player"))
+		{
+			//Line of sight is broken, switch to walk state with last seen position as target
+			personAI.stateMachine.SetTrigger("Idle");
+			personAI.stateMachine.SetTrigger("Noise");
+			personAI.HearSomething(playerTransform.position);
+		}
 	}
 
 	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
+		personAI.animations.ResetTrigger("StartAiming");
 		personAI.animations.SetTrigger("StopAiming");
 	}
 }

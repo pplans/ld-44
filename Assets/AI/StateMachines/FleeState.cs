@@ -5,10 +5,13 @@ using UnityEngine;
 public class FleeState : StateMachineBehaviour
 {
 	private PersonAI personAI;
-
+	
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		personAI = animator.gameObject.GetComponent<PersonAI>();
+
+		animator.SetTrigger("StartShouting");
+		animator.SetTrigger("StopShouting");
 
 		personAI.navMeshAgent.speed = 5f;
 	}
@@ -18,5 +21,13 @@ public class FleeState : StateMachineBehaviour
 		Vector3 fleeVector = animator.transform.position - personAI.target;
 		fleeVector = fleeVector.normalized * 2f;
 		personAI.navMeshAgent.SetDestination(animator.transform.position + fleeVector);
+	}
+
+	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	{
+		animator.ResetTrigger("StartShouting");
+		animator.ResetTrigger("StopShouting");
+
+		personAI.navMeshAgent.speed = 0f;
 	}
 }
