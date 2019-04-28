@@ -13,7 +13,7 @@ public class Person : MonoBehaviour
 
     public float m_blood;
 
-	public Animator stateMachine;
+	public PersonAI personAI;
 
 	#endregion
 

@@ -50,7 +50,6 @@ public class PersonAI : MonoBehaviour
 
 	public void CheckSight()
 	{
-		
 		float angleStart = -visionConeAngle / 2;
 		float angleStep = visionConeAngle / visionRaysCount;
 		for (int r = 0 ; r <= visionRaysCount ; ++r)
