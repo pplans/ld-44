@@ -6,11 +6,12 @@ public class Player : MonoBehaviour
 {
     public bool isAlive = true;
     float m_blood;
+    const float m_max_blood = 100f;
     const float m_bloodPerSecond = 5f; // is static
     public float m_timeToEatOnePeople = 1f;
     public float m_distanceToEatPeople = 1f;
 
-    public float Blood { get { return m_blood; } set { m_blood = value; } }
+    public float Blood { get { return m_blood; } set { m_blood = System.Math.Min(value, m_max_blood); } }
 
     public Player()
 	{
