@@ -30,6 +30,7 @@ public class PersonAI : MonoBehaviour
 
 	public void Start()
 	{
+		//Generate VisionMesh
 		int verticesCount = visionRaysCount + 2;
 		List<Vector3> vertices = new List<Vector3>();
 		int[] triangles = new int[verticesCount * 3 - 6];
