@@ -30,6 +30,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animations: {fileID: 8814251067224199174}
   rigidbody: {fileID: 5926190449507317213}
+  canMove: 0
 --- !u!114 &8367625639338933918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,12 +49,15 @@ MonoBehaviour:
   isEatingPeople: 0
   m_timeToEatOnePeople: 1
   m_distanceToEatPeople: 2
+  m_bloodSpentToKillFromDistance: 40
+  m_distanceToKillFromDistance: 10
   m_uiBloodPoolMat: {fileID: 2100000, guid: b8d60cf65143b8a42bf774cae22520c3, type: 2}
   m_uiObfuscationMat: {fileID: 2100000, guid: cfffaa9c5b6f4844c839fb5aca459ac1, type: 2}
   m_ObfuscationMat: {fileID: 2100000, guid: 556010ccb40b07d4d924bb690970d202, type: 2}
   m_model: {fileID: 6880409707114678004}
   m_partSysBats: {fileID: 343855358037370730}
   m_partSysPuff: {fileID: 3891020757310702644}
+  m_animator: {fileID: 8814251067224199174}
 --- !u!1001 &3006740609825700957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -142,16 +146,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2292316112898245275, guid: 0f6a5f2596b098140a47dccece78c017,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerController
-      objectReference: {fileID: 0}
-    - target: {fileID: 2292316112898245275, guid: 0f6a5f2596b098140a47dccece78c017,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 7020834260934067412, guid: 0f6a5f2596b098140a47dccece78c017,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -206,6 +200,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292316112898245275, guid: 0f6a5f2596b098140a47dccece78c017,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerController
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292316112898245275, guid: 0f6a5f2596b098140a47dccece78c017,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2079251457854748127, guid: 0f6a5f2596b098140a47dccece78c017,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7894382384489659451, guid: 0f6a5f2596b098140a47dccece78c017,
         type: 3}

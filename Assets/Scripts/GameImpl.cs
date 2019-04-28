@@ -225,6 +225,7 @@ public class GameImpl : Game
                             m_timeSincePersonIsBeingEaten += Time.deltaTime;
                             m_player.isEatingPeople = true;
                             m_personBeingEaten = p;
+
                             break;
                         }
                     }
@@ -259,7 +260,18 @@ public class GameImpl : Game
 			m_timeSincePersonIsBeingEaten = 0f;
 			m_player.isEatingPeople = false;
 		}
-	}
+
+        if (m_player.isEatingPeople)
+        {
+            m_player.m_animator.ResetTrigger("StopEating");
+            m_player.m_animator.SetTrigger("StartEating");
+        }
+        else
+        {
+            m_player.m_animator.ResetTrigger("StartEating");
+            m_player.m_animator.SetTrigger("StopEating");
+        }
+    }
 
     void PlayerKillFromDistance()
     {
