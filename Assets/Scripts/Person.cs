@@ -48,6 +48,7 @@ public class Person : MonoBehaviour
     {
         Debug.Log("Person is dead");
         m_isAlive = false;
+		personAI.stateMachine.SetTrigger("Die");
     }
 
 	public virtual bool IsInVision(Transform f)
