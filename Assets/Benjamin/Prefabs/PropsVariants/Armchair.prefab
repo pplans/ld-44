@@ -20,6 +20,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: bc5c4f9d1a5aa4049a12146efb30601d,
+        type: 3}
+      propertyPath: m_Name
+      value: Armchair
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: bc5c4f9d1a5aa4049a12146efb30601d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bc5c4f9d1a5aa4049a12146efb30601d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -75,21 +85,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: bc5c4f9d1a5aa4049a12146efb30601d,
-        type: 3}
-      propertyPath: m_Name
-      value: Armchair
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: bc5c4f9d1a5aa4049a12146efb30601d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: bc5c4f9d1a5aa4049a12146efb30601d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8e1808a279babda40ac0cec6929bbf5d, type: 2}
+      objectReference: {fileID: 2100000, guid: 521dd6a88056bd84c8d60c60c0f2c7e1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc5c4f9d1a5aa4049a12146efb30601d, type: 3}
 --- !u!1 &6555197833852534199 stripped

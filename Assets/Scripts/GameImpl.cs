@@ -119,10 +119,16 @@ public class GameImpl : Game
 		{
 			Debug.Log("Action 3");
 		}
-		else
-		{
-			m_playerController.Move();
-		}
+
+        if (m_player.isEatingPeople)
+        {
+            m_playerController.canMove = false;
+        }
+        else
+        {
+            m_playerController.canMove = true;
+        }
+
 		// update dudes
 		m_player.UpdatePlayer();
 
@@ -132,6 +138,7 @@ public class GameImpl : Game
 		}
 
         levelComplete = true;
+
         foreach (var p in m_targets)
         {
             if (p.GetIsAlive())
