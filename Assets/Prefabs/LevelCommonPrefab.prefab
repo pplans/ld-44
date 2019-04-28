@@ -403,7 +403,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 102900000, guid: 8c07e1d39bab7da4fa1086ebe1f31590, type: 3}
+  - {fileID: 102900000, guid: ff2d52033609f324b80afd90c3ff28a0, type: 3}
+  - {fileID: 102900000, guid: a1807e9026c763949ac6b7e0ab39818e, type: 3}
 --- !u!1 &6251955268270985244
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +930,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1465588825433350832}
     m_Modifications:
+    - target: {fileID: 3208726781319150077, guid: f964e668f1c34f64c9fda65d5e495322,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerController
+      objectReference: {fileID: 0}
     - target: {fileID: 5919773705955000242, guid: f964e668f1c34f64c9fda65d5e495322,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -983,11 +989,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3208726781319150077, guid: f964e668f1c34f64c9fda65d5e495322,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerController
       objectReference: {fileID: 0}
     - target: {fileID: 8367625639338933918, guid: f964e668f1c34f64c9fda65d5e495322,
         type: 3}
