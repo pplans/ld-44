@@ -283,8 +283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 102900000, guid: 946eb9ddb2d134847b5b148c8861adf5, type: 3}
-  - {fileID: 102900000, guid: 85df71dfb1fa06e43a43ba56f3a10b98, type: 3}
+  - Level0
+  - Level1
 --- !u!4 &458630836
 Transform:
   m_ObjectHideFlags: 0
