@@ -88,7 +88,11 @@ public class GameImpl : Game
 
 	const float m_playerMovingSpeed = 5f; // per second
 
-	Person m_personBeingEaten;
+    public float eatDepth;
+    public const float eatConeAngle = 40;
+    public const int eatRaysCount = 10;
+
+    Person m_personBeingEaten;
 	float m_timeSincePersonIsBeingEaten = 0f;
 
 	public override void UpdateGame()
@@ -155,7 +159,8 @@ public class GameImpl : Game
 	void PlayerEatPeople()
 	{
 		Vector3 playerPosition = m_player.gameObject.transform.position;
-		if (m_timeSincePersonIsBeingEaten == 0f)
+        /*
+        if (m_timeSincePersonIsBeingEaten == 0f)
 		{
 			foreach (var p in m_targets)
 			{
@@ -183,8 +188,39 @@ public class GameImpl : Game
 				}
 			}
 		}
+        */
 
-		if (m_timeSincePersonIsBeingEaten > 0f)
+        if (m_timeSincePersonIsBeingEaten == 0f)
+        {
+            float angleStart = -eatConeAngle / 2;
+            float angleStep = eatConeAngle / eatRaysCount;
+
+            for (int r = 0; r <= eatRaysCount; ++r)
+            {
+                eatDepth = m_player.m_distanceToEatPeople;
+                Ray ray = new Ray(m_player.transform.position + Vector3.up, Quaternion.AngleAxis(angleStart + r * angleStep, Vector3.up) * m_player.transform.forward);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, eatDepth, ~LayerMask.GetMask("Ignore Raycast")))
+                {
+                    Debug.DrawLine(ray.origin, hit.point, Color.red);
+                    Person p = hit.transform.gameObject.GetComponent<Person>();
+                    if (p)
+                    {
+                        if (p.GetIsAlive())
+                        {
+                            m_timeSincePersonIsBeingEaten += Time.deltaTime;
+                            m_player.isEatingPeople = true;
+                            m_personBeingEaten = p;
+                            break;
+                        }
+                    }
+                }
+                else if (r == 0 || r == eatRaysCount)
+                    Debug.DrawRay(ray.origin, ray.direction * eatDepth, Color.red);
+            }
+        }
+
+        if (m_timeSincePersonIsBeingEaten > 0f)
 		{
 			if (m_personBeingEaten.GetIsAlive()
 			& Vector3.Distance(m_personBeingEaten.transform.position, playerPosition) <= m_player.m_distanceToEatPeople)
