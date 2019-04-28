@@ -257,7 +257,7 @@ PrefabInstance:
     - target: {fileID: 8262691727681054965, guid: 6a3f257b78a01674b96050441212292d,
         type: 3}
       propertyPath: lengthInSec
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8262691727681054965, guid: 6a3f257b78a01674b96050441212292d,
         type: 3}
@@ -459,6 +459,11 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
       objectReference: {fileID: 0}
+    - target: {fileID: 8262691727681054965, guid: 6a3f257b78a01674b96050441212292d,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a3f257b78a01674b96050441212292d, type: 3}
 --- !u!4 &3302015355862300795 stripped
@@ -533,6 +538,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932201745670972368, guid: 37f468e4b2428b8449c7b6635760b649,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932201745670972368, guid: 37f468e4b2428b8449c7b6635760b649,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37f468e4b2428b8449c7b6635760b649, type: 3}
