@@ -13,6 +13,8 @@ public class WalkState : StateMachineBehaviour
 		personAI.navMeshAgent.speed = 3f;
 
 		personAI.animations.SetTrigger("StopAiming");
+
+		personAI.suspicious.SetActive(true);
 	}
 
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -25,5 +27,7 @@ public class WalkState : StateMachineBehaviour
 		personAI.navMeshAgent.speed = 0f;
 
 		personAI.animations.ResetTrigger("StopAiming");
+
+		personAI.suspicious.SetActive(false);
 	}
 }

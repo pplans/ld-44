@@ -18,6 +18,8 @@ public class AttackState :  StateMachineBehaviour
 		personAI.animations.ResetTrigger("StopAiming");
 		personAI.animations.SetTrigger("StartAiming");
 		shootDelay = shootInterval;
+
+		personAI.alerted.SetActive(true);
 	}
 
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -49,5 +51,7 @@ public class AttackState :  StateMachineBehaviour
 	{
 		personAI.animations.ResetTrigger("StartAiming");
 		personAI.animations.SetTrigger("StopAiming");
+
+		personAI.alerted.SetActive(false);
 	}
 }

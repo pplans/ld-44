@@ -14,6 +14,7 @@ public class Person : MonoBehaviour
     public float m_blood;
 
 	public PersonAI personAI;
+	public GameObject targetMark;
 
 	#endregion
 
