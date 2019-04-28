@@ -99,7 +99,9 @@ public class GameImpl : Game
 
 	public override void UpdateGame()
 	{
-		if (Input.Mapper.IsPressed(Input.Action.Action1) == Input.Type.Hold)
+        m_player.isSuspicious = false;
+
+        if (Input.Mapper.IsPressed(Input.Action.Action1) == Input.Type.Hold)
 		{
 			//Debug.Log("Action 1");
 			PlayerEatPeople();
@@ -265,6 +267,7 @@ public class GameImpl : Game
         {
             m_player.m_animator.ResetTrigger("StopEating");
             m_player.m_animator.SetTrigger("StartEating");
+            m_player.isSuspicious = true;
         }
         else
         {
@@ -281,6 +284,7 @@ public class GameImpl : Game
             m_personLocked.Die();
             m_personLocked = null;
             m_player.Blood = m_player.Blood - m_player.m_bloodSpentToKillFromDistance;
+            m_player.isSuspicious = true;
         }  
     }
 
