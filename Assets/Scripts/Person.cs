@@ -52,6 +52,11 @@ public class Person : MonoBehaviour
 		personAI.stateMachine.SetTrigger("Die");
     }
 
+    public void Lock()
+    {
+        Debug.Log("Targeted");
+    }
+
 	public virtual bool IsInVision(Transform f)
 	{
 		//throw new System.NotImplementedException();

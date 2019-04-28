@@ -20,8 +20,10 @@ public class Player : MonoBehaviour
 
 	public float m_timeToEatOnePeople = 1f;
     public float m_distanceToEatPeople = 1f;
+    public float m_bloodSpentToKillFromDistance = 40f;
+    public float m_distanceToKillFromDistance = 10f;
 
-	public Material m_uiBloodPoolMat;
+    public Material m_uiBloodPoolMat;
 	public Material m_uiObfuscationMat;
 	public Material m_ObfuscationMat;
 	private Material m_PlayerMat;

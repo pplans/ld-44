@@ -118,7 +118,12 @@ public class GameImpl : Game
         else if (Input.Mapper.IsPressed(Input.Action.Action3) == Input.Type.Up & !m_player.isEatingPeople)
 		{
 			Debug.Log("Action 3");
+            PlayerKillFromDistance();
 		}
+        else if (Input.Mapper.IsPressed(Input.Action.Action3) == Input.Type.Hold & !m_player.isEatingPeople)
+        {
+            PlayerLockToKillFromDistance();
+        }
 
         if (m_player.isEatingPeople)
         {
@@ -254,6 +259,62 @@ public class GameImpl : Game
 		}
 	}
 
+    void PlayerKillFromDistance()
+    {
+        float angleStart = -eatConeAngle / 2;
+        float angleStep = eatConeAngle / eatRaysCount;
+
+        for (int r = 0; r <= eatRaysCount; ++r)
+        {
+            eatDepth = m_player.m_distanceToKillFromDistance;
+            Ray ray = new Ray(m_player.transform.position + Vector3.up, Quaternion.AngleAxis(angleStart + r * angleStep, Vector3.up) * m_player.transform.forward);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, eatDepth, ~LayerMask.GetMask("Ignore Raycast")))
+            {
+                Debug.DrawLine(ray.origin, hit.point, Color.red);
+                Person p = hit.transform.gameObject.GetComponent<Person>();
+                if (p)
+                {
+                    if (p.GetIsAlive())
+                    {
+                        p.Die();
+                        m_player.Blood = m_player.Blood - m_player.m_bloodSpentToKillFromDistance;
+                        break;
+                    }
+                }
+            }
+            else if (r == 0 || r == eatRaysCount)
+                Debug.DrawRay(ray.origin, ray.direction * eatDepth, Color.red);
+        }
+    }
+
+    void PlayerLockToKillFromDistance()
+    {
+        float angleStart = -eatConeAngle / 2;
+        float angleStep = eatConeAngle / eatRaysCount;
+
+        for (int r = 0; r <= eatRaysCount; ++r)
+        {
+            eatDepth = m_player.m_distanceToKillFromDistance;
+            Ray ray = new Ray(m_player.transform.position + Vector3.up, Quaternion.AngleAxis(angleStart + r * angleStep, Vector3.up) * m_player.transform.forward);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, eatDepth, ~LayerMask.GetMask("Ignore Raycast")))
+            {
+                Debug.DrawLine(ray.origin, hit.point, Color.red);
+                Person p = hit.transform.gameObject.GetComponent<Person>();
+                if (p)
+                {
+                    if (p.GetIsAlive())
+                    {
+                        p.Lock();
+                        break;
+                    }
+                }
+            }
+            else if (r == 0 || r == eatRaysCount)
+                Debug.DrawRay(ray.origin, ray.direction * eatDepth, Color.red);
+        }
+    }
 
 	public override void CaptureKeyboard()
 	{
