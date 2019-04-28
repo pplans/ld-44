@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d26b0d5d0d8824a8c1e84eaae28410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animations: {fileID: 7606863428067884694}
+  animations: {fileID: 5267738186313542496}
   navMeshAgent: {fileID: 8589614095441587964}
   stateMachine: {fileID: 505761572158381416}
   target: {x: 0, y: 0, z: 0}
@@ -790,9 +790,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6369863212286382270}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7606863428067884694 stripped
+--- !u!95 &5267738186313542496 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 3600431276614348328, guid: 776af7a8d696d554882378d5db473e65,
+  m_CorrespondingSourceObject: {fileID: 1260039428602215390, guid: 776af7a8d696d554882378d5db473e65,
     type: 3}
   m_PrefabInstance: {fileID: 6369863212286382270}
   m_PrefabAsset: {fileID: 0}
