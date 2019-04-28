@@ -34,7 +34,6 @@ public class Player : MonoBehaviour
     {
         m_collider = this.gameObject.GetComponent<CapsuleCollider>();
 		m_modelRenderer = m_model.GetComponent<Renderer>();
-		m_PlayerMat = new Material(m_modelRenderer.material);
     }
 
     public float Blood { get { return m_blood; } set { m_blood = System.Math.Min(value, m_max_blood); } }
@@ -67,7 +66,9 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player is dead");
         isAlive = false;
-    }
+		m_uiBloodPoolMat = new Material(m_uiBloodPoolMat);
+		m_PlayerMat = new Material(m_modelRenderer.material);
+	}
 
     public void PlayerBecomeInvisible()
     {
