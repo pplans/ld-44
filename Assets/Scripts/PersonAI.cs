@@ -7,9 +7,9 @@ public class PersonAI : MonoBehaviour
 {
 	#region Members
 
-	const float visionDepth = 10f;
-	const float visionConeAngle = 40;
-	const int visionRaysCount = 10;
+	public const float visionDepth = 10f;
+	public const float visionConeAngle = 40;
+	public const int visionRaysCount = 10;
 	
 	public Animator animations;
 	public NavMeshAgent navMeshAgent;
@@ -51,9 +51,6 @@ public class PersonAI : MonoBehaviour
 
 	public void CheckSight()
 	{
-		if (stateMachine.GetCurrentAnimatorStateInfo(0).IsName("Die"))
-			return;
-
 		float angleStart = -visionConeAngle / 2;
 		float angleStep = visionConeAngle / visionRaysCount;
 		for (int r = 0 ; r <= visionRaysCount ; ++r)
@@ -98,7 +95,10 @@ public class PersonAI : MonoBehaviour
 	public void Scream()
 	{
 		Debug.Log(transform.name +  " : AAHH!");
-		Collider[] colliders = Physics.OverlapSphere(transform.position, 8f, ~LayerMask.GetMask("Default"));
+		animations.SetTrigger("StartShouting");
+		animations.SetTrigger("StopShouting");
+
+		Collider[] colliders = Physics.OverlapSphere(transform.position, 8f, LayerMask.GetMask("Person"));
 		foreach (Collider c in colliders)
 		{
 			if (c.transform == transform) // Don't scare yourself
@@ -108,11 +108,6 @@ public class PersonAI : MonoBehaviour
 			if (person)
 				person.HearSomething(transform.position);
 		}
-	}
-
-	public void SetTrigger(string triggerName)
-	{
-		stateMachine.SetTrigger(triggerName);
 	}
 
 	#endregion

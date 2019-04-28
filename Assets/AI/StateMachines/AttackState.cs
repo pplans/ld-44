@@ -23,10 +23,13 @@ public class AttackState :  StateMachineBehaviour
 	{
 		personAI.target = playerTransform.position;
 		Vector3 lookAtPlayer = playerTransform.position - personAI.transform.position;
-		if (Physics.Raycast(animator.transform.position + Vector3.up, lookAtPlayer, LayerMask.GetMask("Default")))
+		RaycastHit hit;
+		if (Physics.Raycast(animator.transform.position + Vector3.up, lookAtPlayer, out hit, PersonAI.visionDepth, LayerMask.GetMask("Ignore Raycast"))
+			&& (hit.collider.tag != "Player"))
 		{
 			//Line of sight is broken, switch to walk state with last seen position as target
-			personAI.stateMachine.SetTrigger("Noise");
+			personAI.stateMachine.SetTrigger("Idle");
+			personAI.HearSomething(playerTransform.position);
 			return;
 		}
 
