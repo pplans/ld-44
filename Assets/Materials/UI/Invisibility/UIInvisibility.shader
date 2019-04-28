@@ -25,8 +25,7 @@
 				CGPROGRAM
 				#pragma vertex vert
 				#pragma fragment frag
-				// make fog work
-				#pragma multi_compile_fog
+				#pragma multi_compile_instancing
 
 				#include "UnityCG.cginc"
 
@@ -34,24 +33,28 @@
 				{
 					float4 vertex : POSITION;
 					float2 uv : TEXCOORD0;
+					UNITY_VERTEX_INPUT_INSTANCE_ID
 				};
 
 				struct v2f
 				{
 					float2 uv : TEXCOORD0;
 					float4 vertex : SV_POSITION;
+					UNITY_VERTEX_INPUT_INSTANCE_ID
 				};
 
 				sampler2D _MainTex;
 				sampler2D _NoiseTex;
 				sampler2D _FlowMapTex;
 				float4 _MainTex_ST;
-				float _Percent;
 
 				float _FlowCycle;
 				float _FlowCycleSpeed;
 				float _FlowSpeed;
-				float _FlowAnim;
+				//float _FlowAnim;
+				UNITY_INSTANCING_BUFFER_START(Props)
+					UNITY_DEFINE_INSTANCED_PROP(float, _FlowAnim)
+				UNITY_INSTANCING_BUFFER_END(Props)
 				float4 _FlowScale;
 
 				// from https://www.shadertoy.com/view/tdfSW4
@@ -107,14 +110,17 @@
 					v2f o;
 					o.vertex = UnityObjectToClipPos(v.vertex);
 					o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+					UNITY_SETUP_INSTANCE_ID(v);
+					UNITY_TRANSFER_INSTANCE_ID(v, o); // necessary only if you want to access instanced properties in the fragment Shader.
 					return o;
 				}
 
 				fixed4 frag(v2f i) : SV_Target
 				{
+					UNITY_SETUP_INSTANCE_ID(i); // necessary only if any instanced properties are going to be accessed in the fragment Shader.
 					// sample the texture
 					fixed4 col = applyFlowMap(_NoiseTex, _FlowMapTex, i.uv);
-					col.a = lerp(0.0, col.a, _FlowAnim);
+					col.a = lerp(0.0, col.a, UNITY_ACCESS_INSTANCED_PROP(Props, _FlowAnim));
 					col.rgb = col.aaa*0.2f;
 					col.rgb *= col.a;
 					return clamp(col, 0.0, 1.0);
