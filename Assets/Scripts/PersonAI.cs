@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEditor;
 
 public class PersonAI : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PersonAI : MonoBehaviour
 	public NavMeshAgent navMeshAgent;
 	public Animator stateMachine;
 
+	public MeshFilter visionMesh;
+
 	public GameObject alerted;
 	public GameObject suspicious;
 	public GameObject stun;
@@ -24,6 +27,27 @@ public class PersonAI : MonoBehaviour
 	#endregion
 
 	#region UnityEvents
+
+	public void Start()
+	{
+		int verticesCount = visionRaysCount + 2;
+		List<Vector3> vertices = new List<Vector3>();
+		int[] triangles = new int[verticesCount * 3 - 6];
+		
+		for (int i = 0 ; i < visionRaysCount ; ++i)
+		{
+			vertices.Add(Vector3.zero);
+			triangles[i * 3] = i;
+			triangles[i * 3 + 1] = i + 1;
+			triangles[i * 3 + 2] = verticesCount - 1;
+		}
+		vertices.Add(Vector3.zero);
+		vertices.Add(Vector3.zero);
+
+		visionMesh.mesh = new Mesh();
+		visionMesh.mesh.SetVertices(vertices);
+		visionMesh.mesh.SetTriangles(triangles, 0);
+	}
 
 	public void Update()
 	{
@@ -37,43 +61,41 @@ public class PersonAI : MonoBehaviour
 		CheckSight();
 	}
 
-	public void OnDrawGizmos()
-	{
-		//Debug.DrawLine(transform.position + Vector3.up, target);
-
-		//float angleStart = -visionConeAngle / 2;
-		//float angleStep = visionConeAngle / visionRaysCount;
-		//for (int r = 0 ; r < visionRaysCount ; ++r)
-		//{
-		//	Debug.DrawLine(transform.position + Vector3.up, transform.position + Vector3.up + Quaternion.AngleAxis(angleStart + r * angleStep, Vector3.up) * transform.forward * visionDepth);
-		//}
-	}
-
 	#endregion
 
 	#region Methods
 
 	public void CheckSight()
 	{
+		List<Vector3> vertices = new List<Vector3>();
+		visionMesh.mesh.GetVertices(vertices);
+
 		float angleStart = -visionConeAngle / 2;
 		float angleStep = visionConeAngle / visionRaysCount;
 		for (int r = 0 ; r <= visionRaysCount ; ++r)
 		{
 			Ray ray = new Ray(transform.position + Vector3.up, Quaternion.AngleAxis(angleStart + r * angleStep, Vector3.up) * transform.forward);
+			vertices[r] = transform.worldToLocalMatrix * ray.direction;
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit, visionDepth, ~LayerMask.GetMask("Ignore Raycast")))
 			{
 				Debug.DrawLine(ray.origin, hit.point, Color.red);
+				vertices[r] *= hit.distance;
 				if (hit.transform.tag == "Player")
 				{
 					SeeSomething(hit.transform.position);
-					return;
+					//return;
 				}
 			}
-			else if (r == 0 || r == visionRaysCount)
+			else// if (r == 0 || r == visionRaysCount)
+			{
+				vertices[r] *= visionDepth;
 				Debug.DrawRay(ray.origin, ray.direction * visionDepth, Color.red);
+			}
 		}
 
+		visionMesh.mesh.SetVertices(vertices);
+		visionMesh.mesh.RecalculateBounds();
 	}
 
 	public void SeeSomething(Vector3 pos, bool scary = false)
