@@ -10,8 +10,8 @@ public class FleeState : StateMachineBehaviour
 	{
 		personAI = animator.gameObject.GetComponent<PersonAI>();
 
-		animator.SetTrigger("StartShouting");
-		animator.SetTrigger("StopShouting");
+		personAI.animations.SetTrigger("StartShouting");
+		personAI.animations.SetTrigger("StopShouting");
 
 		personAI.navMeshAgent.speed = 5f;
 	}
@@ -25,8 +25,8 @@ public class FleeState : StateMachineBehaviour
 
 	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		animator.ResetTrigger("StartShouting");
-		animator.ResetTrigger("StopShouting");
+		personAI.animations.ResetTrigger("StartShouting");
+		personAI.animations.ResetTrigger("StopShouting");
 
 		personAI.navMeshAgent.speed = 0f;
 	}

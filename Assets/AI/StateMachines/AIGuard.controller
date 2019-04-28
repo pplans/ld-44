@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00535e93c3cbac74981cc3055a92996b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  personAI: {fileID: 0}
 --- !u!1102 &-4674823757815930647
 AnimatorState:
   serializedVersion: 5
@@ -264,7 +265,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack
+  m_Name: Shoot
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
