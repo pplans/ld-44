@@ -26,7 +26,8 @@ public class AttackState :  StateMachineBehaviour
 		if (Physics.Raycast(animator.transform.position + Vector3.up, lookAtPlayer, LayerMask.GetMask("Default")))
 		{
 			//Line of sight is broken, switch to walk state with last seen position as target
-			personAI.stateMachine.SetTrigger("Noise");
+			personAI.stateMachine.SetTrigger("Idle");
+			personAI.HearSomething(playerTransform.position);
 			return;
 		}
 
