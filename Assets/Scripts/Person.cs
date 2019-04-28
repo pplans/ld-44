@@ -51,6 +51,7 @@ public class Person : MonoBehaviour
         m_isAlive = false;
 		personAI.stateMachine.SetTrigger("Die");
 		personAI.visionMesh.GetComponent<Renderer>().enabled = false;
+        personAI.gameObject.GetComponent<Collider>().enabled = false;
     }
 
     public void Lock()

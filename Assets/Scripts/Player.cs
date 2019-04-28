@@ -31,8 +31,9 @@ public class Player : MonoBehaviour
 	private Renderer m_modelRenderer;
 	public ParticleSystem m_partSysBats;
 	public ParticleSystem m_partSysPuff;
+    public Animator m_animator;
 
-	CapsuleCollider m_collider;
+    CapsuleCollider m_collider;
 
 
     private void Awake()
