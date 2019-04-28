@@ -7,9 +7,9 @@ public class PersonAI : MonoBehaviour
 {
 	#region Members
 
-	const float visionDepth = 10f;
-	const float visionConeAngle = 40;
-	const int visionRaysCount = 10;
+	public const float visionDepth = 10f;
+	public const float visionConeAngle = 40;
+	public const int visionRaysCount = 10;
 	
 	public Animator animations;
 	public NavMeshAgent navMeshAgent;
