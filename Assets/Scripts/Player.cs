@@ -33,12 +33,17 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         m_collider = this.gameObject.GetComponent<CapsuleCollider>();
-		m_modelRenderer = m_model.GetComponent<Renderer>();
     }
 
     public float Blood { get { return m_blood; } set { m_blood = System.Math.Min(value, m_max_blood); } }
 
-    public Player()
+	public void Start()
+	{
+		m_modelRenderer = m_model.GetComponent<Renderer>();
+		m_PlayerMat = new Material(m_modelRenderer.material);
+	}
+
+	public Player()
 	{
 		m_blood = 100.0f;
 		m_obfuscationTimer = m_obfuscationTimerMax;
@@ -67,14 +72,13 @@ public class Player : MonoBehaviour
         Debug.Log("Player is dead");
         isAlive = false;
 		m_uiBloodPoolMat = new Material(m_uiBloodPoolMat);
-		m_PlayerMat = new Material(m_modelRenderer.material);
 	}
 
     public void PlayerBecomeInvisible()
     {
         Debug.Log("INVISIBLE");
         isInvisible = true;
-        this.gameObject.layer = 2;
+        m_collider.enabled = false;
 		m_modelRenderer.material = m_ObfuscationMat;
 
 	}
@@ -83,7 +87,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("VISIBLE");
         isInvisible = false;
-        this.gameObject.layer = 9;
+        m_collider.enabled = true;
 		m_modelRenderer.material = m_PlayerMat;
 	}
 
