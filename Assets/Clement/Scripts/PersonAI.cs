@@ -57,14 +57,17 @@ public class PersonAI : MonoBehaviour
 		{
 			Ray ray = new Ray(transform.position + Vector3.up, Quaternion.AngleAxis(angleStart + r * angleStep, Vector3.up) * transform.forward);
 			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit, visionDepth) && hit.transform.tag == "Player")
+			if (Physics.Raycast(ray, out hit, visionDepth, ~LayerMask.GetMask("Ignore Raycast")))
 			{
-			//	Debug.DrawLine(ray.origin, hit.point, Color.red, 1f, true);
-				SeeSomething(hit.transform.position);
-				return;
+				Debug.DrawLine(ray.origin, hit.point, Color.red);
+				if (hit.transform.tag == "Player")
+				{
+					SeeSomething(hit.transform.position);
+					return;
+				}
 			}
-			//else
-			//	Debug.DrawRay(ray.origin, ray.direction * visionDepth, Color.red);
+			else if (r == 0 || r == visionRaysCount)
+				Debug.DrawRay(ray.origin, ray.direction * visionDepth, Color.red);
 		}
 
 	}

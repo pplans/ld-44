@@ -5,12 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public bool isAlive = true;
+    public bool isEatingPeople = false;
+
     float m_blood;
+    const float m_max_blood = 100f;
     const float m_bloodPerSecond = 5f; // is static
+
     public float m_timeToEatOnePeople = 1f;
     public float m_distanceToEatPeople = 1f;
 
-    public float Blood { get { return m_blood; } set { m_blood = value; } }
+    public float Blood { get { return m_blood; } set { m_blood = System.Math.Min(value, m_max_blood); } }
 
     public Player()
 	{
@@ -18,8 +22,13 @@ public class Player : MonoBehaviour
 	}
 
     void LossBloodOverTime() {
-        m_blood -= m_bloodPerSecond*Time.deltaTime;
+        if (!isEatingPeople)
+        {
+            m_blood -= m_bloodPerSecond * Time.deltaTime;
+        }
+        
         Debug.Log("Blood : " +m_blood);
+
         if (m_blood <= 0)
         {
             PlayerDies();
@@ -28,7 +37,7 @@ public class Player : MonoBehaviour
 
     void PlayerDies()
     {
-        Debug.Log("JE SUIS MORT PUTAIN");
+        Debug.Log("Player is dead");
         isAlive = false;
     }
 

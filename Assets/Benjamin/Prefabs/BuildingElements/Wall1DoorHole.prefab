@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &2060279574067467864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2441010901410062785}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.5, z: 1}
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!95 &3609432040279101770
 Animator:
   serializedVersion: 3
@@ -19,19 +32,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &2060279574067467864
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2441010901410062785}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2.5, z: 1}
-  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!114 &5484111679513924080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 5261639209887639610}
   - component: {fileID: 5205264534344764554}
   - component: {fileID: 14489431238262616}
+  - component: {fileID: 3732330703796167601}
   m_Layer: 0
   m_Name: Wall1DoorHole
   m_TagString: Untagged
@@ -122,6 +123,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3732330703796167601
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430028996412997309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.0010000003, z: 0.022999994}
+  m_Center: {x: 0, y: 0, z: 0.0115}
 --- !u!1001 &5963288643776313544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129,11 +143,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5261639209887639610}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 85fff9d2dfc6260408e9778b07bbf980,
-        type: 3}
-      propertyPath: m_Name
-      value: singledoor
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 85fff9d2dfc6260408e9778b07bbf980,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -203,6 +212,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.009999998
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 85fff9d2dfc6260408e9778b07bbf980,
+        type: 3}
+      propertyPath: m_Name
+      value: singledoor
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 85fff9d2dfc6260408e9778b07bbf980,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2852075536150467593, guid: 85fff9d2dfc6260408e9778b07bbf980,
         type: 3}
