@@ -58,7 +58,12 @@ public class Person : MonoBehaviour
         Debug.Log("Targeted");
     }
 
-	public virtual bool IsInVision(Transform f)
+    public void UnLock()
+    {
+        Debug.Log("UnTargeted");
+    }
+
+    public virtual bool IsInVision(Transform f)
 	{
 		//throw new System.NotImplementedException();
 		return false;
