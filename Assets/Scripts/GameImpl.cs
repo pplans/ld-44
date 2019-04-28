@@ -103,11 +103,15 @@ public class GameImpl : Game
 			m_timeSincePersonIsBeingEaten = 0f;
 			m_player.isEatingPeople = false;
 		}
-		if (Input.Mapper.IsPressed(Input.Action.Action2) == Input.Type.Up & !m_player.isEatingPeople)
+		if (Input.Mapper.IsPressed(Input.Action.Action2) == Input.Type.Down & !m_player.isEatingPeople)
 		{
-			Debug.Log("Action 2");
+            m_player.PlayerBecomeInvisible();
 		}
-		else if (Input.Mapper.IsPressed(Input.Action.Action3) == Input.Type.Up & !m_player.isEatingPeople)
+        if (Input.Mapper.IsPressed(Input.Action.Action2) == Input.Type.Up & !m_player.isEatingPeople)
+        {
+            m_player.PlayerBecomeVisible();
+        }
+        else if (Input.Mapper.IsPressed(Input.Action.Action3) == Input.Type.Up & !m_player.isEatingPeople)
 		{
 			Debug.Log("Action 3");
 		}
@@ -208,17 +212,18 @@ public class GameImpl : Game
 		{
 			Input.ActionEntry input = Input.Mapper.Actions[index];
 			input.Type = Input.Type.None;
-			if (UnityEngine.Input.GetKeyDown(input.Code))
+            
+            if (UnityEngine.Input.GetKeyDown(input.Code))
 			{
 				input.Type |= Input.Type.Down;
 			}
-			if (UnityEngine.Input.GetKeyUp(input.Code))
+            else if (UnityEngine.Input.GetKey(input.Code))
+            {
+                input.Type |= Input.Type.Hold;
+            }
+            else if (UnityEngine.Input.GetKeyUp(input.Code))
 			{
 				input.Type |= Input.Type.Up;
-			}
-			if (UnityEngine.Input.GetKey(input.Code))
-			{
-				input.Type |= Input.Type.Hold;
 			}
 			Input.Mapper.Actions[index] = input;
 		}
