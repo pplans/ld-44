@@ -10,6 +10,9 @@ public class Person : MonoBehaviour
 	protected bool m_isAlive;
 	protected bool m_isShouting;
 
+
+    public float m_blood;
+
 	public Animator stateMachine;
 
 	#endregion
@@ -27,9 +30,25 @@ public class Person : MonoBehaviour
 	{
 	}
 
-	#endregion
+    #endregion
 
-	#region Methods
+    #region Methods
+
+    public void UpdatePerson()
+    {
+       ;
+    }
+
+    public bool GetIsAlive()
+    {
+        return m_isAlive;
+    }
+
+    public void Die()
+    {
+        Debug.Log("Person is dead");
+        m_isAlive = false;
+    }
 
 	public virtual bool IsInVision(Transform f)
 	{
