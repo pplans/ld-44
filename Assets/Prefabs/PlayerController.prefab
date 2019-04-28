@@ -47,6 +47,7 @@ MonoBehaviour:
   isEatingPeople: 0
   m_timeToEatOnePeople: 1
   m_distanceToEatPeople: 2
+  m_uiBloodPoolMat: {fileID: 0}
 --- !u!1001 &3695275365367495526
 PrefabInstance:
   m_ObjectHideFlags: 0
