@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("INVISIBLE");
         isInvisible = true;
-        m_collider.enabled = false;
+        this.gameObject.layer = 2;
 		m_modelRenderer.material = m_ObfuscationMat;
 
 	}
@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("VISIBLE");
         isInvisible = false;
-        m_collider.enabled = true;
+        this.gameObject.layer = 9;
 		m_modelRenderer.material = m_PlayerMat;
 	}
 
