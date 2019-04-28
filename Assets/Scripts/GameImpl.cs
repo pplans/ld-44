@@ -95,9 +95,13 @@ public class GameImpl : Game
     Person m_personBeingEaten;
 	float m_timeSincePersonIsBeingEaten = 0f;
 
+    Person m_personLocked;
+
 	public override void UpdateGame()
 	{
-		if (Input.Mapper.IsPressed(Input.Action.Action1) == Input.Type.Hold)
+        m_player.isSuspicious = false;
+
+        if (Input.Mapper.IsPressed(Input.Action.Action1) == Input.Type.Hold)
 		{
 			//Debug.Log("Action 1");
 			PlayerEatPeople();
@@ -223,6 +227,7 @@ public class GameImpl : Game
                             m_timeSincePersonIsBeingEaten += Time.deltaTime;
                             m_player.isEatingPeople = true;
                             m_personBeingEaten = p;
+
                             break;
                         }
                     }
@@ -257,35 +262,30 @@ public class GameImpl : Game
 			m_timeSincePersonIsBeingEaten = 0f;
 			m_player.isEatingPeople = false;
 		}
-	}
+
+        if (m_player.isEatingPeople)
+        {
+            m_player.m_animator.ResetTrigger("StopEating");
+            m_player.m_animator.SetTrigger("StartEating");
+            m_player.isSuspicious = true;
+        }
+        else
+        {
+            m_player.m_animator.ResetTrigger("StartEating");
+            m_player.m_animator.SetTrigger("StopEating");
+        }
+    }
 
     void PlayerKillFromDistance()
     {
-        float angleStart = -eatConeAngle / 2;
-        float angleStep = eatConeAngle / eatRaysCount;
-
-        for (int r = 0; r <= eatRaysCount; ++r)
+        if (m_personLocked != null)
         {
-            eatDepth = m_player.m_distanceToKillFromDistance;
-            Ray ray = new Ray(m_player.transform.position + Vector3.up, Quaternion.AngleAxis(angleStart + r * angleStep, Vector3.up) * m_player.transform.forward);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, eatDepth, ~LayerMask.GetMask("Ignore Raycast")))
-            {
-                Debug.DrawLine(ray.origin, hit.point, Color.red);
-                Person p = hit.transform.gameObject.GetComponent<Person>();
-                if (p)
-                {
-                    if (p.GetIsAlive())
-                    {
-                        p.Die();
-                        m_player.Blood = m_player.Blood - m_player.m_bloodSpentToKillFromDistance;
-                        break;
-                    }
-                }
-            }
-            else if (r == 0 || r == eatRaysCount)
-                Debug.DrawRay(ray.origin, ray.direction * eatDepth, Color.red);
-        }
+            m_personLocked.UnLock();
+            m_personLocked.Die();
+            m_personLocked = null;
+            m_player.Blood = m_player.Blood - m_player.m_bloodSpentToKillFromDistance;
+            m_player.isSuspicious = true;
+        }  
     }
 
     void PlayerLockToKillFromDistance()
@@ -293,6 +293,8 @@ public class GameImpl : Game
         float angleStart = -eatConeAngle / 2;
         float angleStep = eatConeAngle / eatRaysCount;
 
+        bool thereIsSomeoneToLock = false;
+
         for (int r = 0; r <= eatRaysCount; ++r)
         {
             eatDepth = m_player.m_distanceToKillFromDistance;
@@ -306,13 +308,37 @@ public class GameImpl : Game
                 {
                     if (p.GetIsAlive())
                     {
-                        p.Lock();
+                        if (m_personLocked != null)
+                        {
+                            if (p.GetInstanceID() != m_personLocked.GetInstanceID())
+                            {
+                                m_personLocked.UnLock();
+                                p.Lock();
+                                m_personLocked = p;
+                                
+                            }
+                        }
+                        else
+                        {
+                            p.Lock();
+                            m_personLocked = p;
+                        }
+                        thereIsSomeoneToLock = true;
                         break;
                     }
                 }
             }
             else if (r == 0 || r == eatRaysCount)
                 Debug.DrawRay(ray.origin, ray.direction * eatDepth, Color.red);
+        }
+
+        if (thereIsSomeoneToLock == false)
+        {
+            if (m_personLocked != null)
+            {
+                m_personLocked.UnLock();
+                m_personLocked = null;
+            }
         }
     }
 

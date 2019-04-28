@@ -51,6 +51,7 @@ public class Person : MonoBehaviour
         m_isAlive = false;
 		personAI.stateMachine.SetTrigger("Die");
 		personAI.visionMesh.GetComponent<Renderer>().enabled = false;
+        personAI.gameObject.GetComponent<Collider>().enabled = false;
     }
 
     public void Lock()
@@ -58,7 +59,12 @@ public class Person : MonoBehaviour
         Debug.Log("Targeted");
     }
 
-	public virtual bool IsInVision(Transform f)
+    public void UnLock()
+    {
+        Debug.Log("UnTargeted");
+    }
+
+    public virtual bool IsInVision(Transform f)
 	{
 		//throw new System.NotImplementedException();
 		return false;

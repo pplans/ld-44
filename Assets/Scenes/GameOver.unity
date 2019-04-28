@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 102900000, guid: 8c07e1d39bab7da4fa1086ebe1f31590, type: 3}
+  - LoadLevel
 --- !u!4 &357961252
 Transform:
   m_ObjectHideFlags: 0

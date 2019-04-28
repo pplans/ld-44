@@ -417,8 +417,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 102900000, guid: ff2d52033609f324b80afd90c3ff28a0, type: 3}
-  - {fileID: 102900000, guid: a1807e9026c763949ac6b7e0ab39818e, type: 3}
+  - GameOver
+  - Win
 --- !u!1 &6251955268270985244
 GameObject:
   m_ObjectHideFlags: 0

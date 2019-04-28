@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public bool isAlive = true;
     public bool isInvisible = false;
     public bool isEatingPeople = false;
+    public bool isSuspicious = false;
 
     float m_blood;
     const float m_max_blood = 100f;
@@ -31,8 +32,9 @@ public class Player : MonoBehaviour
 	private Renderer m_modelRenderer;
 	public ParticleSystem m_partSysBats;
 	public ParticleSystem m_partSysPuff;
+    public Animator m_animator;
 
-	CapsuleCollider m_collider;
+    CapsuleCollider m_collider;
 
 
     private void Awake()
@@ -95,9 +97,10 @@ public class Player : MonoBehaviour
     {
         Debug.Log("VISIBLE");
         isInvisible = false;
+        isSuspicious = true;
         this.gameObject.layer = 9;
         m_modelRenderer.material = m_PlayerMat;
-	}
+    }
 
     public void UpdatePlayer()
     {

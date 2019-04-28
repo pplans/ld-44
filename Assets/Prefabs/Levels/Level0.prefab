@@ -780,11 +780,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5340331570756485267}
     m_Modifications:
-    - target: {fileID: 3720398952509330036, guid: 9740965ea40a4ec43a3efc4999ce7bba,
-        type: 3}
-      propertyPath: m_Name
-      value: MagazineRack (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 430897482392346727, guid: 9740965ea40a4ec43a3efc4999ce7bba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -839,6 +834,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720398952509330036, guid: 9740965ea40a4ec43a3efc4999ce7bba,
+        type: 3}
+      propertyPath: m_Name
+      value: MagazineRack (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9740965ea40a4ec43a3efc4999ce7bba, type: 3}
@@ -1260,6 +1260,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 99.99994
       objectReference: {fileID: 0}
+    - target: {fileID: 7887009360112992623, guid: d15540cdaa7064d4abb8574d0020165e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d15540cdaa7064d4abb8574d0020165e, type: 3}
 --- !u!4 &393521157515563542 stripped
@@ -1419,6 +1424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 99.99994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887009360112992623, guid: d15540cdaa7064d4abb8574d0020165e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d15540cdaa7064d4abb8574d0020165e, type: 3}
@@ -2600,11 +2610,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5340331570756485267}
     m_Modifications:
-    - target: {fileID: 3720398952509330036, guid: 9740965ea40a4ec43a3efc4999ce7bba,
-        type: 3}
-      propertyPath: m_Name
-      value: MagazineRack
-      objectReference: {fileID: 0}
     - target: {fileID: 430897482392346727, guid: 9740965ea40a4ec43a3efc4999ce7bba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2659,6 +2664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720398952509330036, guid: 9740965ea40a4ec43a3efc4999ce7bba,
+        type: 3}
+      propertyPath: m_Name
+      value: MagazineRack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9740965ea40a4ec43a3efc4999ce7bba, type: 3}
