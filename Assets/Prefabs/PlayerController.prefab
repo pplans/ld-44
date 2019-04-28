@@ -44,10 +44,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   isAlive: 1
+  isInvisible: 0
   isEatingPeople: 0
   m_timeToEatOnePeople: 1
   m_distanceToEatPeople: 2
-  m_uiBloodPoolMat: {fileID: 0}
+  m_uiBloodPoolMat: {fileID: 2100000, guid: b8d60cf65143b8a42bf774cae22520c3, type: 2}
+  m_ObfuscationMat: {fileID: 2100000, guid: 556010ccb40b07d4d924bb690970d202, type: 2}
+  m_model: {fileID: 6880409707114678004}
 --- !u!1001 &3695275365367495526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125,6 +128,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f4c289ca7c106b445b792f395e2c32e5, type: 2}
+    - target: {fileID: 6642861209406538865, guid: 0f6a5f2596b098140a47dccece78c017,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a96fcae667ab5a649bced5259188064a, type: 2}
     m_RemovedComponents:
     - {fileID: 4476252162626446478, guid: 0f6a5f2596b098140a47dccece78c017, type: 3}
     - {fileID: 8589614095441587964, guid: 0f6a5f2596b098140a47dccece78c017, type: 3}
@@ -140,6 +148,12 @@ GameObject:
 --- !u!95 &8814251067224199174 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5267738186313542496, guid: 0f6a5f2596b098140a47dccece78c017,
+    type: 3}
+  m_PrefabInstance: {fileID: 3695275365367495526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6880409707114678004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7796963994962722194, guid: 0f6a5f2596b098140a47dccece78c017,
     type: 3}
   m_PrefabInstance: {fileID: 3695275365367495526}
   m_PrefabAsset: {fileID: 0}
