@@ -94,7 +94,6 @@ public class PersonAI : MonoBehaviour
 
 	public void Scream()
 	{
-		Debug.Log(transform.name +  " : AAHH!");
 		animations.SetTrigger("StartShouting");
 		animations.SetTrigger("StopShouting");
 
