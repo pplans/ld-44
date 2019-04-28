@@ -48,13 +48,9 @@ MonoBehaviour:
   isEatingPeople: 0
   m_timeToEatOnePeople: 1
   m_distanceToEatPeople: 2
-<<<<<<< HEAD
   m_uiBloodPoolMat: {fileID: 2100000, guid: b8d60cf65143b8a42bf774cae22520c3, type: 2}
   m_ObfuscationMat: {fileID: 2100000, guid: 556010ccb40b07d4d924bb690970d202, type: 2}
   m_model: {fileID: 6880409707114678004}
-=======
-  m_uiBloodPoolMat: {fileID: 0}
->>>>>>> 1720c9aab3758bde311f44d22a91366f50b9be1a
 --- !u!1001 &3695275365367495526
 PrefabInstance:
   m_ObjectHideFlags: 0
