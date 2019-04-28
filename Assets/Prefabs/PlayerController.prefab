@@ -42,7 +42,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411aa5fc553878944803a3c58db20547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  playerController: {fileID: 2261676538646420732}
   isAlive: 1
   isEatingPeople: 0
   m_timeToEatOnePeople: 1
