@@ -60,9 +60,9 @@
 				
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
-				col.rgb = lerp(fixed3(i.uv.x < UNITY_ACCESS_INSTANCED_PROP(Props, _Percent) ? 0.8f : 0.0f, 0.0, 0.0), col.rgb*1.5, col.a);
+				col.rgb = lerp((i.uv.x < UNITY_ACCESS_INSTANCED_PROP(Props, _Percent) ? float3(0.44f, 0.12f, 0.12):float3(0.0f, 0.0f, 0.0f)), col.rgb*1.0, col.a);
+				col.rgb *= col.a;
 				col.a = 1.0f;
-				//col.rgb *= col.a;
                 return clamp(col, 0.0, 1.0);
             }
             ENDCG
