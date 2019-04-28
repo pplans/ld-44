@@ -195,8 +195,14 @@ public class GameImpl : Game
 					m_player.Blood += m_personBeingEaten.m_blood;
 					m_personBeingEaten.Die();
 					m_timeSincePersonIsBeingEaten = 0f;
+                    m_player.isEatingPeople = false;
 				}
 			}
+            else
+            {
+                m_timeSincePersonIsBeingEaten = 0f;
+                m_player.isEatingPeople = false;
+            }
 		}
 		else
 		{
