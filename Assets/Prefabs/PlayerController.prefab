@@ -59,16 +59,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2292316112898245275, guid: 0f6a5f2596b098140a47dccece78c017,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerController
-      objectReference: {fileID: 0}
-    - target: {fileID: 2292316112898245275, guid: 0f6a5f2596b098140a47dccece78c017,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 7020834260934067412, guid: 0f6a5f2596b098140a47dccece78c017,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -124,6 +114,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2292316112898245275, guid: 0f6a5f2596b098140a47dccece78c017,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerController
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292316112898245275, guid: 0f6a5f2596b098140a47dccece78c017,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5267738186313542496, guid: 0f6a5f2596b098140a47dccece78c017,
         type: 3}
       propertyPath: m_Controller
@@ -133,7 +133,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a96fcae667ab5a649bced5259188064a, type: 2}
+      objectReference: {fileID: 2100000, guid: bf3b03858f9f7384ba20c24da088800c, type: 2}
     m_RemovedComponents:
     - {fileID: 4476252162626446478, guid: 0f6a5f2596b098140a47dccece78c017, type: 3}
     - {fileID: 8589614095441587964, guid: 0f6a5f2596b098140a47dccece78c017, type: 3}
