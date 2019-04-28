@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     float m_blood;
     const float m_max_blood = 100f;
-    const float m_bloodPerSecond = 5f; // is static
+	const float m_bloodPerSecond = 0.0f;//5f; // is static
     const float m_bloodPerSecondDuringInvisibility = 15f; // is static
 	const float m_obfuscationTimerMax = 0.5f;
 	private float m_obfuscationTimer = 1.0f;
