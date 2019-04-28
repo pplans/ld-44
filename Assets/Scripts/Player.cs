@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public float m_timeToEatOnePeople = 1f;
     public float m_distanceToEatPeople = 1f;
 
+	public Material m_uiBloodPoolMat;
+
     public float Blood { get { return m_blood; } set { m_blood = System.Math.Min(value, m_max_blood); } }
 
     public Player()
@@ -47,11 +49,6 @@ public class Player : MonoBehaviour
     public void UpdatePlayer()
     {
         LossBloodOverTime();
-    }
-
-    // Update is called once per frame
-    public void Update()
-    { 
-
-    }
+		m_uiBloodPoolMat.SetFloat("_Percent", Mathf.Clamp(m_blood / m_max_blood, 0.0f, 1.0f));
+	}
 }
