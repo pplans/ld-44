@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    public GameObject cam;
+
     public bool isAlive = true;
     public bool isEatingPeople = false;
 

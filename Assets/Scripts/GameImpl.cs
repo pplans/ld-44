@@ -81,11 +81,10 @@ public class GameImpl : Game
     public List<Person> m_people;
     public Player m_player;
 
-    const float m_playerMovingSpeed = 1f; // per second
+    const float m_playerMovingSpeed = 5f; // per second
 
     Person m_personBeingEaten;
     float m_timeSincePersonIsBeingEaten = 0f;
-    bool m_playerIsEating = false;
 
     public override void UpdateGame()
     {
@@ -110,53 +109,53 @@ public class GameImpl : Game
                     else
                     {
                         m_timeSincePersonIsBeingEaten = 0f;
-                        m_playerIsEating = false;
+                        m_player.isEatingPeople = false;
                     }
-                    if (Input.Mapper.IsPressed(Input.Action.Action2) == Input.Type.Up & !m_playerIsEating)
+                    if (Input.Mapper.IsPressed(Input.Action.Action2) == Input.Type.Up & !m_player.isEatingPeople)
                     {
                         Debug.Log("Action 2");
                     }
-                    else if (Input.Mapper.IsPressed(Input.Action.Action3) == Input.Type.Up & !m_playerIsEating)
+                    else if (Input.Mapper.IsPressed(Input.Action.Action3) == Input.Type.Up & !m_player.isEatingPeople)
                     {
                         Debug.Log("Action 3");
                     }
 
-                    else if ((Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold) & !m_playerIsEating)
+                    else if ((Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold) & !m_player.isEatingPeople)
                     {
                         m_player.gameObject.transform.Translate(-0.71f * m_playerMovingSpeed * Time.deltaTime, 0, -0.71f * m_playerMovingSpeed * Time.deltaTime);
                         //Debug.Log("Down-Left");
                     }
-                    else if ((Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold) & !m_playerIsEating)
+                    else if ((Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold) & !m_player.isEatingPeople)
                     {
                         m_player.gameObject.transform.Translate(0.71f * m_playerMovingSpeed * Time.deltaTime, 0, -0.71f * m_playerMovingSpeed * Time.deltaTime);
                         //Debug.Log("Down-Right");
                     }
-                    else if ((Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold) & !m_playerIsEating)
+                    else if ((Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold) & !m_player.isEatingPeople)
                     {
                         m_player.gameObject.transform.Translate(-0.71f * m_playerMovingSpeed * Time.deltaTime, 0, 0.71f * m_playerMovingSpeed * Time.deltaTime);
                         //Debug.Log("Up-Left");
                     }
-                    else if ((Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold) & !m_playerIsEating)
+                    else if ((Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold) & !m_player.isEatingPeople)
                     {
                         m_player.gameObject.transform.Translate(0.71f * m_playerMovingSpeed * Time.deltaTime, 0, 0.71f * m_playerMovingSpeed * Time.deltaTime);
                         //Debug.Log("Up-Right");
                     }
-                    else if (Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold & !m_playerIsEating)
+                    else if (Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold & !m_player.isEatingPeople)
                     {
                         m_player.gameObject.transform.Translate(0, 0, -m_playerMovingSpeed * Time.deltaTime);
                         //Debug.Log("Down");
                     }
-                    else if (Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold & !m_playerIsEating)
+                    else if (Input.Mapper.IsPressed(Input.Action.Up) == Input.Type.Hold & !m_player.isEatingPeople)
                     {
                         m_player.gameObject.transform.Translate(0, 0, m_playerMovingSpeed * Time.deltaTime);
                         //Debug.Log("Up");
                     }
-                    else if (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold & !m_playerIsEating)
+                    else if (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold & !m_player.isEatingPeople)
                     {
                         m_player.gameObject.transform.Translate(-m_playerMovingSpeed * Time.deltaTime, 0, 0);
                         //Debug.Log("Left");
                     }
-                    else if (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold & !m_playerIsEating)
+                    else if (Input.Mapper.IsPressed(Input.Action.Right) == Input.Type.Hold & !m_player.isEatingPeople)
                     {
                         m_player.gameObject.transform.Translate(m_playerMovingSpeed * Time.deltaTime, 0, 0);
                         //Debug.Log("Right");
@@ -201,7 +200,7 @@ public class GameImpl : Game
                 if (p.GetIsAlive() & dist <= m_player.m_distanceToEatPeople)
                 {
                     m_timeSincePersonIsBeingEaten += Time.deltaTime;
-                    m_playerIsEating = true;
+                    m_player.isEatingPeople = true;
                     m_personBeingEaten = p;
                     break;
                 }
@@ -215,7 +214,7 @@ public class GameImpl : Game
                 if (p.GetIsAlive() & dist <= m_player.m_distanceToEatPeople)
                 {
                     m_timeSincePersonIsBeingEaten += Time.deltaTime;
-                    m_playerIsEating = true;
+                    m_player.isEatingPeople = true;
                     m_personBeingEaten = p;
                     break;
                 }
@@ -239,7 +238,7 @@ public class GameImpl : Game
         else
         {
             m_timeSincePersonIsBeingEaten = 0f;
-            m_playerIsEating = false;
+            m_player.isEatingPeople = false;
         }
     }
 
