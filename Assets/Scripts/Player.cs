@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
 	private Material m_PlayerMat;
 	public GameObject m_model;
 	private Renderer m_modelRenderer;
+	public ParticleSystem m_partSysBats;
+	public ParticleSystem m_partSysPuff;
 
 	CapsuleCollider m_collider;
 
@@ -42,6 +44,8 @@ public class Player : MonoBehaviour
 	{
 		m_modelRenderer = m_model.GetComponent<Renderer>();
 		m_PlayerMat = new Material(m_modelRenderer.material);
+		m_partSysBats.Stop();
+		m_partSysPuff.Stop();
 	}
 
 	public Player()
@@ -80,7 +84,8 @@ public class Player : MonoBehaviour
         isInvisible = true;
         this.gameObject.layer = 2;
         m_modelRenderer.material = m_ObfuscationMat;
-
+		m_partSysBats.Play();
+		m_partSysPuff.Play();
 	}
 
     public void PlayerBecomeVisible()
