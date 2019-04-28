@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &5388419945855029570
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882741576001013711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0386267, y: 0.7535889, z: 0.7107415}
+  m_Center: {x: -0.01752019, y: 0.42613113, z: 0.008223295}
 --- !u!1001 &7566393078440337094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65,7 +78,32 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: b2555f70723ab9b4593fa86fb83acb83,
         type: 3}
       propertyPath: m_Name
-      value: reception_desk
+      value: ReceptionDesk
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b2555f70723ab9b4593fa86fb83acb83,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261066068682214272, guid: b2555f70723ab9b4593fa86fb83acb83,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377606743768473345, guid: b2555f70723ab9b4593fa86fb83acb83,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846077106480191204, guid: b2555f70723ab9b4593fa86fb83acb83,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: -6626373671232628330, guid: b2555f70723ab9b4593fa86fb83acb83,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7684640436099380690, guid: b2555f70723ab9b4593fa86fb83acb83,
         type: 3}
@@ -79,3 +117,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8e1808a279babda40ac0cec6929bbf5d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2555f70723ab9b4593fa86fb83acb83, type: 3}
+--- !u!1 &1882741576001013711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: b2555f70723ab9b4593fa86fb83acb83,
+    type: 3}
+  m_PrefabInstance: {fileID: 7566393078440337094}
+  m_PrefabAsset: {fileID: 0}
