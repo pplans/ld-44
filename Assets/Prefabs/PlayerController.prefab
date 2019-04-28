@@ -30,6 +30,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animations: {fileID: 8814251067224199174}
   rigidbody: {fileID: 5926190449507317213}
+--- !u!114 &8367625639338933918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3208726781319150077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411aa5fc553878944803a3c58db20547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  isAlive: 1
+  isEatingPeople: 0
+  m_timeToEatOnePeople: 1
+  m_distanceToEatPeople: 2
 --- !u!1001 &3695275365367495526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37,6 +54,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2292316112898245275, guid: 0f6a5f2596b098140a47dccece78c017,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerController
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292316112898245275, guid: 0f6a5f2596b098140a47dccece78c017,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7020834260934067412, guid: 0f6a5f2596b098140a47dccece78c017,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -92,16 +119,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2292316112898245275, guid: 0f6a5f2596b098140a47dccece78c017,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerController
-      objectReference: {fileID: 0}
-    - target: {fileID: 2292316112898245275, guid: 0f6a5f2596b098140a47dccece78c017,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 5267738186313542496, guid: 0f6a5f2596b098140a47dccece78c017,
         type: 3}
       propertyPath: m_Controller
@@ -111,6 +128,7 @@ PrefabInstance:
     - {fileID: 4476252162626446478, guid: 0f6a5f2596b098140a47dccece78c017, type: 3}
     - {fileID: 8589614095441587964, guid: 0f6a5f2596b098140a47dccece78c017, type: 3}
     - {fileID: 505761572158381416, guid: 0f6a5f2596b098140a47dccece78c017, type: 3}
+    - {fileID: 1272963085900946052, guid: 0f6a5f2596b098140a47dccece78c017, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0f6a5f2596b098140a47dccece78c017, type: 3}
 --- !u!1 &3208726781319150077 stripped
 GameObject:
