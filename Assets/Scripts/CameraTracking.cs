@@ -8,6 +8,6 @@ public class CameraTracking : MonoBehaviour
 
 	public void Update()
 	{
-		transform.position = Vector3.Lerp(transform.position, target.position, 0.3f);
+		transform.position = Vector3.Lerp(transform.position, target.position, 0.1f);
 	}
 }
