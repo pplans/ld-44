@@ -14,6 +14,7 @@ public class PersonAI : MonoBehaviour
 	public Animator animations;
 	public NavMeshAgent navMeshAgent;
 	public Animator stateMachine;
+
 	public Vector3 target;
 
 	#endregion
@@ -50,6 +51,9 @@ public class PersonAI : MonoBehaviour
 
 	public void CheckSight()
 	{
+		if (stateMachine.GetCurrentAnimatorStateInfo(0).IsName("Die"))
+			return;
+
 		float angleStart = -visionConeAngle / 2;
 		float angleStep = visionConeAngle / visionRaysCount;
 		for (int r = 0 ; r <= visionRaysCount ; ++r)
@@ -104,6 +108,11 @@ public class PersonAI : MonoBehaviour
 			if (person)
 				person.HearSomething(transform.position);
 		}
+	}
+
+	public void SetTrigger(string triggerName)
+	{
+		stateMachine.SetTrigger(triggerName);
 	}
 
 	#endregion

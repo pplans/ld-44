@@ -5,17 +5,43 @@ using UnityEngine;
 public class AttackState :  StateMachineBehaviour
 {
 	private PersonAI personAI;
+	Transform playerTransform;
+	private float shootDelay;
+	const float shootInterval = 1f;
 
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		personAI = animator.gameObject.GetComponent<PersonAI>();
+		playerTransform = (GameImpl.instance as GameImpl).m_player.transform;
+		personAI.target = playerTransform.position;
 
-		personAI.navMeshAgent.speed = 3f;
-		Debug.Log(animator.transform.name + " Bang!");
+		personAI.animations.SetTrigger("StartAiming");
+		shootDelay = shootInterval;
 	}
-	
+
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		personAI.navMeshAgent.SetDestination(personAI.target);
+		personAI.target = playerTransform.position;
+		Vector3 lookAtPlayer = playerTransform.position - personAI.transform.position;
+		if (Physics.Raycast(animator.transform.position + Vector3.up, lookAtPlayer, LayerMask.GetMask("Default")))
+		{
+			//Line of sight is broken, switch to walk state with last seen position as target
+			personAI.stateMachine.SetTrigger("Noise");
+			return;
+		}
+
+		personAI.transform.rotation = Quaternion.LookRotation(lookAtPlayer, Vector3.up);
+
+		shootDelay -= Time.deltaTime;
+		if (shootDelay <= 0f)
+		{
+			Debug.Log(animator.transform.name + " Bang!");
+			shootDelay = shootInterval;
+		}
+	}
+
+	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	{
+		personAI.animations.SetTrigger("StopAiming");
 	}
 }
