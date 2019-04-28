@@ -80,6 +80,7 @@ public class GameImpl : Game
     public List<Person> m_targets;
     public List<Person> m_people;
     public Player m_player;
+    public PlayerController m_playerController;
 
     const float m_playerMovingSpeed = 5f; // per second
 
@@ -119,7 +120,11 @@ public class GameImpl : Game
                     {
                         Debug.Log("Action 3");
                     }
-
+                    else
+                    {
+                        m_playerController.Move();
+                    }
+                    /*
                     else if ((Input.Mapper.IsPressed(Input.Action.Down) == Input.Type.Hold) & (Input.Mapper.IsPressed(Input.Action.Left) == Input.Type.Hold) & !m_player.isEatingPeople)
                     {
                         m_player.gameObject.transform.Translate(-0.71f * m_playerMovingSpeed * Time.deltaTime, 0, -0.71f * m_playerMovingSpeed * Time.deltaTime);
@@ -160,6 +165,7 @@ public class GameImpl : Game
                         m_player.gameObject.transform.Translate(m_playerMovingSpeed * Time.deltaTime, 0, 0);
                         //Debug.Log("Right");
                     }
+                    */
                     // update dudes
                     m_player.UpdatePlayer();
 

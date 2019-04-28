@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 	public Rigidbody rigidbody;
 	private Vector2 inputDirection;
 
-	public void Update()
+	public void Move()
 	{
 		inputDirection = new Vector2(UnityEngine.Input.GetAxis("Horizontal"), UnityEngine.Input.GetAxis("Vertical"));
 		inputDirection.Normalize();
