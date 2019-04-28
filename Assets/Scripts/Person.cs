@@ -53,6 +53,11 @@ public class Person : MonoBehaviour
 		personAI.visionMesh.GetComponent<Renderer>().enabled = false;
     }
 
+    public void Lock()
+    {
+        Debug.Log("Targeted");
+    }
+
 	public virtual bool IsInVision(Transform f)
 	{
 		//throw new System.NotImplementedException();
