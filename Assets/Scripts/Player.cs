@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
 		m_PlayerMat = new Material(m_modelRenderer.material);
 		m_partSysBats.Stop();
 		m_partSysPuff.Stop();
+		OutlineManager.instance.Add(m_model.gameObject);
 	}
 
 	public Player()

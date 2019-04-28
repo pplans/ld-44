@@ -192,6 +192,16 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 6671358575804402487, guid: 8a38dc15910a54340b733d8d32a01993,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527601151425026728, guid: 8a38dc15910a54340b733d8d32a01993,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a38dc15910a54340b733d8d32a01993, type: 3}
 --- !u!114 &616297184 stripped
@@ -290,11 +300,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4122447463769321504, guid: 4049f642460124f4ab2d33afaf537689,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -15
-      objectReference: {fileID: 0}
     - target: {fileID: 950608733125781645, guid: 4049f642460124f4ab2d33afaf537689,
         type: 3}
       propertyPath: m_people.Array.size
@@ -320,6 +325,11 @@ PrefabInstance:
       propertyPath: m_targets.Array.data[0]
       value: 
       objectReference: {fileID: 616297185}
+    - target: {fileID: 4122447463769321504, guid: 4049f642460124f4ab2d33afaf537689,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -15
+      objectReference: {fileID: 0}
     - target: {fileID: 8423271164546259031, guid: 4049f642460124f4ab2d33afaf537689,
         type: 3}
       propertyPath: m_AnchorMin.y
