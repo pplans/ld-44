@@ -65,7 +65,12 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 98195dfbaa4aa3045bdc9c87cea12246,
         type: 3}
       propertyPath: m_Name
-      value: rug
+      value: Rug
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 98195dfbaa4aa3045bdc9c87cea12246,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 98195dfbaa4aa3045bdc9c87cea12246,
         type: 3}
