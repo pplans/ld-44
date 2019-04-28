@@ -15,6 +15,10 @@ public class PersonAI : MonoBehaviour
 	public NavMeshAgent navMeshAgent;
 	public Animator stateMachine;
 
+	public GameObject alerted;
+	public GameObject suspicious;
+	public GameObject stun;
+
 	public Vector3 target;
 
 	#endregion

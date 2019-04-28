@@ -14,6 +14,8 @@ public class FleeState : StateMachineBehaviour
 		personAI.animations.SetTrigger("StopShouting");
 
 		personAI.navMeshAgent.speed = 5f;
+
+		personAI.alerted.SetActive(true);
 	}
 
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -29,5 +31,6 @@ public class FleeState : StateMachineBehaviour
 		personAI.animations.ResetTrigger("StopShouting");
 
 		personAI.navMeshAgent.speed = 0f;
+		personAI.alerted.SetActive(false);
 	}
 }
