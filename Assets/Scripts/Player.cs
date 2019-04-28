@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public bool isAlive = true;
     public bool isInvisible = false;
     public bool isEatingPeople = false;
+    public bool isSuspicious = false;
 
     float m_blood;
     const float m_max_blood = 100f;
@@ -95,9 +96,10 @@ public class Player : MonoBehaviour
     {
         Debug.Log("VISIBLE");
         isInvisible = false;
+        isSuspicious = true;
         this.gameObject.layer = 9;
         m_modelRenderer.material = m_PlayerMat;
-	}
+    }
 
     public void UpdatePlayer()
     {

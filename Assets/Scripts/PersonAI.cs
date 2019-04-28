@@ -23,6 +23,7 @@ public class PersonAI : MonoBehaviour
 	public GameObject stun;
 
 	public Vector3 target;
+    public bool isaguard;
 
 	#endregion
 
@@ -82,7 +83,7 @@ public class PersonAI : MonoBehaviour
 			{
 				Debug.DrawLine(ray.origin, hit.point, Color.red);
 				vertices[r] *= hit.distance;
-				if (hit.transform.tag == "Player")
+				if (hit.transform.tag == "Player" && (isaguard || hit.transform.GetComponent<Player>().isSuspicious))
 				{
 					SeeSomething(hit.transform.position);
 					//return;
