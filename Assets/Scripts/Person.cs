@@ -17,6 +17,9 @@ public class Person : MonoBehaviour
 	public GameObject targetMark;
 	public GameObject m_deathMark;
 
+	public GameObject m_poolOfBlood;
+	private float m_poolOfBloodAmount;
+
 	#endregion
 
 	#region UnityEvents
@@ -26,6 +29,7 @@ public class Person : MonoBehaviour
 		m_isAlive = true;
 		m_isTarget = false;
 		m_isShouting = false;
+		m_poolOfBloodAmount = 0.0f;
 	}
 
 	public void Update()
@@ -38,7 +42,11 @@ public class Person : MonoBehaviour
 
     public void UpdatePerson()
     {
-       ;
+       if(!m_isAlive)
+	   {
+			m_poolOfBloodAmount = Mathf.Clamp(m_poolOfBloodAmount+Time.deltaTime * 0.1f, 0.0f, 1.0f);
+			m_poolOfBlood.GetComponent<Renderer>().material.SetFloat("_Amount", m_poolOfBloodAmount);
+	   }
     }
 
     public bool GetIsAlive()
@@ -53,7 +61,8 @@ public class Person : MonoBehaviour
         personAI.stateMachine.SetTrigger("Die");
 		personAI.visionMesh.GetComponent<Renderer>().enabled = false;
         personAI.gameObject.GetComponent<Collider>().enabled = false;
-    }
+		m_poolOfBlood.SetActive(true);
+	}
 
     public void Lock()
     {
