@@ -196,7 +196,7 @@ MonoBehaviour:
     <color=#F00>Kill</color> your <color=#F00>Target</color> to <color=#080>Win</color>.
 
 
-    <color=#444>Hold X</color> to <color=#F00>Suck Blood</color>.'
+    <color=#444>Hold SPACE</color> to <color=#F00>Suck Blood</color>.'
 --- !u!222 &421722108
 CanvasRenderer:
   m_ObjectHideFlags: 0
