@@ -354,6 +354,7 @@ GameObject:
   - component: {fileID: 2792035119851106250}
   - component: {fileID: 3080522075805514988}
   - component: {fileID: 8009724313909702211}
+  - component: {fileID: 5637767380670389373}
   m_Layer: 5
   m_Name: Obfuscation
   m_TagString: Untagged
@@ -417,6 +418,18 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &5637767380670389373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2159218949355187217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67294cb6a015987478fbef37f0224b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2443888543279459835
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +780,7 @@ GameObject:
   - component: {fileID: 2904162057765841019}
   - component: {fileID: 7062646161563160431}
   - component: {fileID: 8608406978964755756}
+  - component: {fileID: 6606334685823166149}
   m_Layer: 5
   m_Name: BloodPool
   m_TagString: Untagged
@@ -832,6 +846,18 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &6606334685823166149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6251955268270985244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67294cb6a015987478fbef37f0224b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6431774947665936284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1777,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f964e668f1c34f64c9fda65d5e495322, type: 3}
+--- !u!114 &7730388278455548428 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8367625639338933918, guid: f964e668f1c34f64c9fda65d5e495322,
+    type: 3}
+  m_PrefabInstance: {fileID: 2258586007623484562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411aa5fc553878944803a3c58db20547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &16618937291249774 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2261676538646420732, guid: f964e668f1c34f64c9fda65d5e495322,
@@ -1769,15 +1807,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2258586007623484562}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7730388278455548428 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8367625639338933918, guid: f964e668f1c34f64c9fda65d5e495322,
-    type: 3}
-  m_PrefabInstance: {fileID: 2258586007623484562}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 411aa5fc553878944803a3c58db20547, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
