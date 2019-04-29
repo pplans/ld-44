@@ -10,7 +10,7 @@ public class AutoLoad : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		timer = 1f;
+		timer = 0.3f;
 	}
 
 	// Update is called once per frame

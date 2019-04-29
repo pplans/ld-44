@@ -112,6 +112,11 @@ PrefabInstance:
       propertyPath: isaguard
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4020149614381305651, guid: 0f6a5f2596b098140a47dccece78c017,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bcfb837e2d9e24b48882b31697806ab8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f6a5f2596b098140a47dccece78c017, type: 3}
 --- !u!1 &5805597657871167705 stripped
