@@ -50,7 +50,7 @@ public class Person : MonoBehaviour
     {
         Debug.Log("Person is dead");
         m_isAlive = false;
-		personAI.stateMachine.SetTrigger("Die");
+        personAI.stateMachine.SetTrigger("Die");
 		personAI.visionMesh.GetComponent<Renderer>().enabled = false;
         personAI.gameObject.GetComponent<Collider>().enabled = false;
     }
@@ -70,6 +70,13 @@ public class Person : MonoBehaviour
 		//throw new System.NotImplementedException();
 		return false;
 	}
-
-	#endregion
+    public virtual void StartBeingAttacked()
+    {
+        personAI.animations.SetTrigger("StartBeingAttacked");
+    }
+    public virtual void StopBeingAttacked()
+    {
+        personAI.animations.SetTrigger("StopBeingAttacked");
+    }
+    #endregion
 }
