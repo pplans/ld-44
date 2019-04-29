@@ -4,6 +4,7 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
 		_Percent("BloodPercent", Range(0.0, 1.0)) = 1.0
+		_PercentTemporary("BloodPercentTemporary", Range(0.0, 1.0)) = 1.0
     }
     SubShader
     {
@@ -42,6 +43,7 @@
 			//float _Percent;
 			UNITY_INSTANCING_BUFFER_START(Props)
 				UNITY_DEFINE_INSTANCED_PROP(float, _Percent)
+				UNITY_DEFINE_INSTANCED_PROP(float, _PercentTemporary)
 			UNITY_INSTANCING_BUFFER_END(Props)
 
             v2f vert (appdata v)
@@ -61,7 +63,20 @@
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
 				// blood ratio colors : float3(0.44f, 0.12f, 0.12)
-				col.rgb = lerp((i.uv.x < UNITY_ACCESS_INSTANCED_PROP(Props, _Percent) ? float3(0.88, 0.24, 0.24)*2.0:float3(0.0, 0.0, 0.0)), col.rgb*1.0, col.a);
+				float percentBlood = UNITY_ACCESS_INSTANCED_PROP(Props, _Percent);
+				float percentBloodReservation = UNITY_ACCESS_INSTANCED_PROP(Props, _PercentTemporary);
+				col.rgb = lerp(
+					(
+						i.uv.x < percentBlood ?
+						(
+							i.uv.x < (percentBlood - percentBloodReservation) ?
+								float3(0.88, 0.24, 0.24)*2.0
+								:
+								float3(0.88, 0.88, 0.24)*2.0
+						)	:
+							float3(0.0, 0.0, 0.0)
+					)
+					, col.rgb*1.0, col.a);
 				col.rgb *= col.a;
 				col.a = 1.0;
                 return clamp(col, 0.0, 1.0);

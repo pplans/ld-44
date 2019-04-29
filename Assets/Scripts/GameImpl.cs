@@ -124,10 +124,18 @@ public class GameImpl : Game
 		{
 			Debug.Log("Action 3");
             PlayerKillFromDistance();
+			m_player.SetBloodPoolReserve(0.0f);
 		}
         else if (UnityEngine.Input.GetButton("MindBlast") & !m_player.isEatingPeople)
         {
-            PlayerLockToKillFromDistance();
+            if(PlayerLockToKillFromDistance())
+			{
+				m_player.SetBloodPoolReserve(m_player.m_bloodSpentToKillFromDistance);
+			}
+			else
+			{
+				m_player.SetBloodPoolReserve(0.0f);
+			}
         }
 
         if (m_player.isEatingPeople)
@@ -225,10 +233,13 @@ public class GameImpl : Game
                     {
                         if (p.GetIsAlive())
                         {
+                            if (m_personBeingEaten && m_personBeingEaten != p)
+                                m_personBeingEaten.StopBeingAttacked();
+                            p.StartBeingAttacked();
+
                             m_timeSincePersonIsBeingEaten += Time.deltaTime;
                             m_player.isEatingPeople = true;
                             m_personBeingEaten = p;
-
                             break;
                         }
                     }
@@ -254,13 +265,19 @@ public class GameImpl : Game
 			}
             else
             {
+                if (m_personBeingEaten)
+                    m_personBeingEaten.StopBeingAttacked();
+
                 m_timeSincePersonIsBeingEaten = 0f;
                 m_player.isEatingPeople = false;
             }
 		}
 		else
 		{
-			m_timeSincePersonIsBeingEaten = 0f;
+            if (m_personBeingEaten)
+                m_personBeingEaten.StopBeingAttacked();
+
+            m_timeSincePersonIsBeingEaten = 0f;
 			m_player.isEatingPeople = false;
 		}
 
@@ -286,10 +303,11 @@ public class GameImpl : Game
             m_personLocked = null;
             m_player.Blood = m_player.Blood - m_player.m_bloodSpentToKillFromDistance;
             m_player.isSuspicious = true;
+            m_player.m_animator.SetTrigger("StartRemoteAttack");
         }  
     }
 
-    void PlayerLockToKillFromDistance()
+    bool PlayerLockToKillFromDistance()
     {
         float angleStart = -eatConeAngle / 2;
         float angleStep = eatConeAngle / eatRaysCount;
@@ -341,6 +359,8 @@ public class GameImpl : Game
                 m_personLocked = null;
             }
         }
+
+		return thereIsSomeoneToLock;
     }
 
 	public override void CaptureKeyboard()

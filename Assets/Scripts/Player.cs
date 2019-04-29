@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
 		m_partSysBats.Stop();
 		m_partSysPuff.Stop();
 		OutlineManager.instance.Add(m_model.gameObject);
+		SetBloodPoolReserve(0.0f);
 	}
 
 	public Player()
@@ -124,5 +126,10 @@ public class Player : MonoBehaviour
 		}
 		m_uiBloodPoolMat.material.SetFloat("_Percent", Mathf.Clamp(m_blood / m_max_blood, 0.0f, 1.0f));
 		m_uiObfuscationMat.material.SetFloat("_FlowAnim", Mathf.Clamp((m_obfuscationTimerMax - m_obfuscationTimer)/ m_obfuscationTimerMax, 0.0f, 1.0f));
+	}
+
+	internal void SetBloodPoolReserve(float m_bloodSpentToKillFromDistance)
+	{
+		m_uiBloodPoolMat.material.SetFloat("_PercentTemporary", Mathf.Clamp(m_bloodSpentToKillFromDistance / m_max_blood, 0.0f, 1.0f));
 	}
 }
