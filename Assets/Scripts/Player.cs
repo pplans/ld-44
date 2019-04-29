@@ -102,6 +102,11 @@ public class Player : MonoBehaviour
         m_modelRenderer.material = m_PlayerMat;
     }
 
+	public void HitPlayer(float damageValue)
+	{
+		m_blood -= damageValue;
+	}
+
     public void UpdatePlayer()
     {
         LossBloodOverTime();
