@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 780278906342346437}
   - component: {fileID: 1094140510041836499}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextObfuscate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,8 +108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33.48822, y: -84.21608}
-  m_SizeDelta: {x: 120, y: 30}
+  m_AnchoredPosition: {x: 45, y: -84.21608}
+  m_SizeDelta: {x: 140, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &780278906342346437
 CanvasRenderer:
@@ -152,7 +152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'C : Invisibility'
+  m_Text: 'C (Hold) : Invisibility'
 --- !u!1 &1100364489196306757
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 7327124881100016682}
   - component: {fileID: 627483641767812779}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextFeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 573599885831838567}
   - component: {fileID: 556689636069103405}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: TextDistanceAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,8 +565,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33.488224, y: -120}
-  m_SizeDelta: {x: 120, y: 30}
+  m_AnchoredPosition: {x: 84, y: -120}
+  m_SizeDelta: {x: 220, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &573599885831838567
 CanvasRenderer:
@@ -609,7 +609,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'V : Mind Blast'
+  m_Text: 'V (Hold, Release) : Mind Blast'
 --- !u!1 &4311486636789836216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1116,7 @@ GameObject:
   - component: {fileID: 6997482120053678882}
   - component: {fileID: 1302306443359062870}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
