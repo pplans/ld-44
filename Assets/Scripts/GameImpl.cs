@@ -108,7 +108,9 @@ public class GameImpl : Game
 		}
 		else
 		{
-			m_timeSincePersonIsBeingEaten = 0f;
+            PlayerStopEatingPeople(); // bad vampire
+
+            m_timeSincePersonIsBeingEaten = 0f;
 			m_player.isEatingPeople = false;
 		}
 		if (Input.Mapper.IsPressed(Input.Action.Action2) == Input.Type.Down & !m_player.isEatingPeople)
@@ -172,7 +174,15 @@ public class GameImpl : Game
 		}
 	}
 
-	void PlayerEatPeople()
+    void PlayerStopEatingPeople()
+    {
+        if (m_personBeingEaten)
+            m_personBeingEaten.StopBeingAttacked();
+        m_player.m_animator.ResetTrigger("StartEating");
+        m_player.m_animator.SetTrigger("StopEating");
+    }
+
+    void PlayerEatPeople()
 	{
 		Vector3 playerPosition = m_player.gameObject.transform.position;
         /*
