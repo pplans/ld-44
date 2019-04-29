@@ -33,6 +33,7 @@ public class AttackState :  StateMachineBehaviour
 		if (shootDelay <= 0f)
 		{
 			Debug.Log(animator.transform.name + " Bang!");
+			personAI.Shoot();
 			shootDelay = shootInterval;
 		}
 

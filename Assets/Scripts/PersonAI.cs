@@ -17,6 +17,7 @@ public class PersonAI : MonoBehaviour
 	public Animator stateMachine;
 
 	public MeshFilter visionMesh;
+	public LineRenderer shootTrail;
 
 	public GameObject alerted;
 	public GameObject suspicious;
@@ -132,6 +133,14 @@ public class PersonAI : MonoBehaviour
 			if (person)
 				person.HearSomething(transform.position);
 		}
+	}
+
+	public void Shoot()
+	{
+		shootTrail.SetPosition(0, transform.position + Vector3.up);
+		shootTrail.SetPosition(1, target + Vector3.up);
+
+		(Game.instance as GameImpl).m_player.HitPlayer(35f);
 	}
 
 	#endregion
