@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -24,8 +25,9 @@ public class Player : MonoBehaviour
     public float m_bloodSpentToKillFromDistance = 40f;
     public float m_distanceToKillFromDistance = 10f;
 
-    public Material m_uiBloodPoolMat;
-	public Material m_uiObfuscationMat;
+    public Image m_uiBloodPoolMat;
+	public Image m_uiObfuscationMat;
+
 	public Material m_ObfuscationMat;
 	private Material m_PlayerMat;
 	public GameObject m_model;
@@ -120,7 +122,7 @@ public class Player : MonoBehaviour
 			//m_modelRenderer.material.Lerp(m_ObfuscationMat, m_PlayerMat, m_obfuscationTimer);
 			m_obfuscationTimer = Mathf.Min(m_obfuscationTimerMax, m_obfuscationTimer + Time.fixedDeltaTime);
 		}
-		m_uiBloodPoolMat.SetFloat("_Percent", Mathf.Clamp(m_blood / m_max_blood, 0.0f, 1.0f));
-		m_uiObfuscationMat.SetFloat("_FlowAnim", Mathf.Clamp((m_obfuscationTimerMax - m_obfuscationTimer)/ m_obfuscationTimerMax, 0.0f, 1.0f));
+		m_uiBloodPoolMat.material.SetFloat("_Percent", Mathf.Clamp(m_blood / m_max_blood, 0.0f, 1.0f));
+		m_uiObfuscationMat.material.SetFloat("_FlowAnim", Mathf.Clamp((m_obfuscationTimerMax - m_obfuscationTimer)/ m_obfuscationTimerMax, 0.0f, 1.0f));
 	}
 }
