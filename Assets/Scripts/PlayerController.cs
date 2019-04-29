@@ -14,9 +14,10 @@ public class PlayerController : MonoBehaviour
         if (canMove)
         {
             inputDirection = new Vector2(UnityEngine.Input.GetAxis("Horizontal"), UnityEngine.Input.GetAxis("Vertical"));
+            float magnitude = Mathf.Min(inputDirection.magnitude, 1f);
             inputDirection.Normalize();
 
-            Vector3 move = inputDirection.magnitude * transform.forward * 5f;
+            Vector3 move = magnitude * transform.forward * 5f;
 
             //Synchronize motion
             float forwardVelocity = move.magnitude;
