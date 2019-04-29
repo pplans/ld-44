@@ -954,12 +954,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288564286102850683}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2dacc194c0039524188ad4a013f764dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bIsBlinking: 1
   m_fBlinkingOffset: 0.1
   m_fBlinkingCycle: 1
   m_fBlinkingCycleMin: 0.2
