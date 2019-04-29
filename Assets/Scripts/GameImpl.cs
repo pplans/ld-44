@@ -101,7 +101,8 @@ public class GameImpl : Game
 	{
         m_player.isSuspicious = false;
 
-        if (Input.Mapper.IsPressed(Input.Action.Action1) == Input.Type.Hold)
+        //if (Input.Mapper.IsPressed(Input.Action.Action1) == Input.Type.Hold)
+		if (UnityEngine.Input.GetButton("Attack"))
 		{
 			//Debug.Log("Action 1");
 			PlayerEatPeople();
@@ -111,21 +112,21 @@ public class GameImpl : Game
 			m_timeSincePersonIsBeingEaten = 0f;
 			m_player.isEatingPeople = false;
 		}
-		if (Input.Mapper.IsPressed(Input.Action.Action2) == Input.Type.Down & !m_player.isEatingPeople)
+		if (UnityEngine.Input.GetButtonDown("Invisibility") & !m_player.isEatingPeople)
 		{
             m_player.PlayerBecomeInvisible();
 		}
-        if (Input.Mapper.IsPressed(Input.Action.Action2) == Input.Type.Up & !m_player.isEatingPeople)
+        if (UnityEngine.Input.GetButtonUp("Invisibility") & !m_player.isEatingPeople)
         {
             m_player.PlayerBecomeVisible();
         }
-        else if (Input.Mapper.IsPressed(Input.Action.Action3) == Input.Type.Up & !m_player.isEatingPeople)
+        else if (UnityEngine.Input.GetButtonUp("MindBlast") & !m_player.isEatingPeople)
 		{
 			Debug.Log("Action 3");
             PlayerKillFromDistance();
 			m_player.SetBloodPoolReserve(0.0f);
 		}
-        else if (Input.Mapper.IsPressed(Input.Action.Action3) == Input.Type.Hold & !m_player.isEatingPeople)
+        else if (UnityEngine.Input.GetButton("MindBlast") & !m_player.isEatingPeople)
         {
             if(PlayerLockToKillFromDistance())
 			{

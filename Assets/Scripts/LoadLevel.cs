@@ -11,4 +11,9 @@ public class LoadLevel : MonoBehaviour
 	{
 		SceneManager.LoadScene(levels[level], LoadSceneMode.Single);
 	}
+
+	public void QuitGame()
+	{
+		Application.Quit();
+	}
 }
