@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 2243100797906940961}
   - component: {fileID: 7391179987168714940}
   - component: {fileID: 9032975652656452519}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 2079251457854748127}
   - component: {fileID: 2993700703784998470}
   - component: {fileID: 7595418656486393199}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.6
+  m_Radius: 0.4
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -469,7 +469,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2292316112898245275}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.6
+  m_Radius: 0.4
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
@@ -492,7 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6326972026760223632}
   - component: {fileID: 4026064013787833273}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Targeted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1247,6 +1247,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5530430567312809941, guid: dd1f33d6526265a44a18543023dc09a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6805358311681967538, guid: dd1f33d6526265a44a18543023dc09a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1327,11 +1332,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2294952301235626398, guid: 776af7a8d696d554882378d5db473e65,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5163866855443321381, guid: 776af7a8d696d554882378d5db473e65,
         type: 3}
       propertyPath: m_Name
@@ -1855,6 +1855,16 @@ PrefabInstance:
     - target: {fileID: 9220712243581589156, guid: 776af7a8d696d554882378d5db473e65,
         type: 3}
       propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294952301235626398, guid: 776af7a8d696d554882378d5db473e65,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294952301235626398, guid: 776af7a8d696d554882378d5db473e65,
+        type: 3}
+      propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
