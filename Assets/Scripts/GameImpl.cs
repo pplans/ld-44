@@ -123,10 +123,18 @@ public class GameImpl : Game
 		{
 			Debug.Log("Action 3");
             PlayerKillFromDistance();
+			m_player.SetBloodPoolReserve(0.0f);
 		}
         else if (Input.Mapper.IsPressed(Input.Action.Action3) == Input.Type.Hold & !m_player.isEatingPeople)
         {
-            PlayerLockToKillFromDistance();
+            if(PlayerLockToKillFromDistance())
+			{
+				m_player.SetBloodPoolReserve(m_player.m_bloodSpentToKillFromDistance);
+			}
+			else
+			{
+				m_player.SetBloodPoolReserve(0.0f);
+			}
         }
 
         if (m_player.isEatingPeople)
@@ -298,7 +306,7 @@ public class GameImpl : Game
         }  
     }
 
-    void PlayerLockToKillFromDistance()
+    bool PlayerLockToKillFromDistance()
     {
         float angleStart = -eatConeAngle / 2;
         float angleStep = eatConeAngle / eatRaysCount;
@@ -350,6 +358,8 @@ public class GameImpl : Game
                 m_personLocked = null;
             }
         }
+
+		return thereIsSomeoneToLock;
     }
 
 	public override void CaptureKeyboard()
