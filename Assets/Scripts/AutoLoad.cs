@@ -10,7 +10,7 @@ public class AutoLoad : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		timer = 3f;
+		timer = 1f;
 	}
 
 	// Update is called once per frame
@@ -18,6 +18,9 @@ public class AutoLoad : MonoBehaviour
 	{
 		timer -= Time.deltaTime;
 		if (timer <= 0)
-			loadLevel.LoadLevelX(0);
+		{
+			if (UnityEngine.Input.anyKeyDown)
+				loadLevel.LoadLevelX(0);
+		}
 	}
 }

@@ -283,8 +283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - Level0
-  - Level1
+  - Tutorial1
+  - Tutorial2
 --- !u!4 &458630836
 Transform:
   m_ObjectHideFlags: 0
