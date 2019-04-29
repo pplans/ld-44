@@ -102,5 +102,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e36a724b69f2739489395503ae4a25b1, type: 2}
+    - target: {fileID: 1272963085900946052, guid: 0f6a5f2596b098140a47dccece78c017,
+        type: 3}
+      propertyPath: deathMark
+      value: 
+      objectReference: {fileID: 1153589724405853996}
+    - target: {fileID: 1272963085900946052, guid: 0f6a5f2596b098140a47dccece78c017,
+        type: 3}
+      propertyPath: m_deathMark
+      value: 
+      objectReference: {fileID: 1153589724405853996}
+    - target: {fileID: 7726705903962102378, guid: 0f6a5f2596b098140a47dccece78c017,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.009
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f6a5f2596b098140a47dccece78c017, type: 3}
+--- !u!1 &1153589724405853996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5169853245647352096, guid: 0f6a5f2596b098140a47dccece78c017,
+    type: 3}
+  m_PrefabInstance: {fileID: 6322312379924585996}
+  m_PrefabAsset: {fileID: 0}

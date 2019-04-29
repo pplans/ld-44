@@ -15,6 +15,7 @@ public class Person : MonoBehaviour
 
 	public PersonAI personAI;
 	public GameObject targetMark;
+	public GameObject m_deathMark;
 
 	#endregion
 
@@ -56,13 +57,13 @@ public class Person : MonoBehaviour
 
     public void Lock()
     {
-        Debug.Log("Targeted");
+		m_deathMark.SetActive(true);
     }
 
     public void UnLock()
-    {
-        Debug.Log("UnTargeted");
-    }
+	{
+		m_deathMark.SetActive(false);
+	}
 
     public virtual bool IsInVision(Transform f)
 	{
