@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
 		m_partSysBats.Stop();
 		m_partSysPuff.Stop();
 		OutlineManager.instance.Add(m_model.gameObject);
+		SetBloodPoolReserve(0.0f);
 	}
 
 	public Player()

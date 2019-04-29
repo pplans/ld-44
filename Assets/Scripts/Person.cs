@@ -62,7 +62,6 @@ public class Person : MonoBehaviour
 		personAI.visionMesh.GetComponent<Renderer>().enabled = false;
         personAI.gameObject.GetComponent<Collider>().enabled = false;
 		m_poolOfBlood.SetActive(true);
-
 	}
 
     public void Lock()
