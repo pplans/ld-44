@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1249005795883198570}
   - component: {fileID: 7705887156029760019}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: PoolOfBlood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
