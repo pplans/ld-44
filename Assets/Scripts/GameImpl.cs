@@ -88,6 +88,9 @@ public class GameImpl : Game
 
 	const float m_playerMovingSpeed = 5f; // per second
 
+    const float m_timeBeforeWin = 2f;
+    public float m_timeSinceWin = 0f;
+
     public float eatDepth;
     public const float eatConeAngle = 40;
     public const int eatRaysCount = 10;
@@ -170,7 +173,15 @@ public class GameImpl : Game
         if (levelComplete)
         {
             Debug.Log("Level Complete");
-            loadLevel.LoadLevelX(1);
+
+            if (m_timeSinceWin > m_timeBeforeWin)
+                loadLevel.LoadLevelX(1);
+            else
+                m_timeSinceWin += Time.deltaTime;
+        }
+        else
+        {
+            m_timeSinceWin = 0;
         }
 
 		foreach (Person p in m_targets)
