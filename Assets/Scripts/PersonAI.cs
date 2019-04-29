@@ -18,6 +18,7 @@ public class PersonAI : MonoBehaviour
 
 	public MeshFilter visionMesh;
 	public LineRenderer shootTrail;
+	private float shootTimer = 0f;
 
 	public GameObject alerted;
 	public GameObject suspicious;
@@ -62,6 +63,13 @@ public class PersonAI : MonoBehaviour
 
 		//Vision
 		CheckSight();
+
+		if (shootTrail.gameObject.activeSelf)
+		{
+			shootTimer -= Time.deltaTime;
+			if (shootTimer <= 0f)
+				shootTrail.gameObject.SetActive(false);
+		}
 	}
 
 	#endregion
@@ -137,6 +145,9 @@ public class PersonAI : MonoBehaviour
 
 	public void Shoot()
 	{
+		shootTrail.gameObject.SetActive(true);
+		shootTimer = 0.2f;
+
 		shootTrail.SetPosition(0, transform.position + Vector3.up);
 		shootTrail.SetPosition(1, target + Vector3.up);
 
