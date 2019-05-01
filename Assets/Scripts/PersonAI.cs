@@ -72,6 +72,18 @@ public class PersonAI : MonoBehaviour
 		}
 	}
 
+	public void OnDrawGizmosSelected()
+	{
+		float angleStart = -visionConeAngle / 2;
+		float angleStop = -angleStart;
+
+		Ray ray = new Ray(transform.position + Vector3.up, Quaternion.AngleAxis(angleStart, Vector3.up) * transform.forward);
+		Debug.DrawRay(ray.origin, ray.direction * visionDepth, Color.red);
+
+		ray = new Ray(transform.position + Vector3.up, Quaternion.AngleAxis(angleStop, Vector3.up) * transform.forward);
+		Debug.DrawRay(ray.origin, ray.direction * visionDepth, Color.red);
+	}
+
 	#endregion
 
 	#region Methods
