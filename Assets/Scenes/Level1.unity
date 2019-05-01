@@ -58,7 +58,7 @@ LightmapSettings:
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
-    m_AO: 0
+    m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
@@ -1021,6 +1021,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2792035119851106250, guid: 4049f642460124f4ab2d33afaf537689,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 79
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792035119851106250, guid: 4049f642460124f4ab2d33afaf537689,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -103
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4049f642460124f4ab2d33afaf537689, type: 3}
 --- !u!1001 &890966744
@@ -1845,6 +1855,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -16.993
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915156310518153613, guid: 50e21eee472bd314a82b5f92baba0367,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 288564286102850683, guid: 50e21eee472bd314a82b5f92baba0367,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317272543107312179, guid: 50e21eee472bd314a82b5f92baba0367,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50e21eee472bd314a82b5f92baba0367, type: 3}

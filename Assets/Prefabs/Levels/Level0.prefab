@@ -197,7 +197,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5340331569480285099
 Transform:
@@ -287,7 +287,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5340331569529654102
 Transform:
@@ -379,7 +379,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5340331569810680028
 Transform:
@@ -455,7 +455,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5340331569967310017
 Transform:
@@ -780,6 +780,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5340331570756485267}
     m_Modifications:
+    - target: {fileID: 3720398952509330036, guid: 9740965ea40a4ec43a3efc4999ce7bba,
+        type: 3}
+      propertyPath: m_Name
+      value: MagazineRack (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 430897482392346727, guid: 9740965ea40a4ec43a3efc4999ce7bba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -834,11 +839,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3720398952509330036, guid: 9740965ea40a4ec43a3efc4999ce7bba,
-        type: 3}
-      propertyPath: m_Name
-      value: MagazineRack (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9740965ea40a4ec43a3efc4999ce7bba, type: 3}
@@ -2610,6 +2610,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5340331570756485267}
     m_Modifications:
+    - target: {fileID: 3720398952509330036, guid: 9740965ea40a4ec43a3efc4999ce7bba,
+        type: 3}
+      propertyPath: m_Name
+      value: MagazineRack
+      objectReference: {fileID: 0}
     - target: {fileID: 430897482392346727, guid: 9740965ea40a4ec43a3efc4999ce7bba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2664,11 +2669,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3720398952509330036, guid: 9740965ea40a4ec43a3efc4999ce7bba,
-        type: 3}
-      propertyPath: m_Name
-      value: MagazineRack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9740965ea40a4ec43a3efc4999ce7bba, type: 3}
